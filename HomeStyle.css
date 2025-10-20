@@ -8,27 +8,27 @@
     outline: none;
     font-family: "Poppins", sans-serif;
   }
-  
-  :root {
-    --bg-color: #0e0006;
-    --second-bg-color: #100007;
-    --text-color: #ffffff;
-    --main-color: #4185fb;
-    --secondary-color: #5367ff;
-    --accent-color: #6d677f;
-    --navbar-color: rgba(0, 0, 0, 0.3);
-  }
-  
-  body.lightmode{
-    --bg-color: #757272bf;
-    --second-bg-color: #000000;
-    --text-color: #0269de;
-    --main-color: #4185fb;
-    --secondary-color: #00a8e5;
-    --accent-color: #573da1;
-    --navbar-color: rgba(0, 0, 0, 0.3);
-  
-  }
+
+/*Theme colors Tropical */
+:root {
+  --bg-color: #004d4d;
+  --second-bg-color: #006666;
+  --text-color: #b2fffd;
+  --main-color: #00ffcc;
+  --secondary-color: #ff6b6b;
+  --accent-color: #ffd166;
+  --navbar-color: rgba(0, 77, 77, 0.9);
+}
+
+body.lightmode {
+  --bg-color: #f0fffe;
+  --second-bg-color: #ffffff;
+  --text-color: #008080;
+  --main-color: #00ffcc;
+  --secondary-color: #ff6b6b;
+  --accent-color: #ffd166;
+  --navbar-color: rgba(240, 255, 254, 0.9);
+}
   /* Body Git test*/
   html {
     overflow-x: hidden;
