@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Disqualiffyy</title>
+    <title>Disqualify</title>
     <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
@@ -15,13 +15,13 @@
       rel="stylesheet"
     />
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="/HomeStyle.css" />
+    <link rel="stylesheet" href="HomeStyle.css" />
   </head>
 
   <body>
     <header class="header">
       <!-- Logo -->
-      <a href="/MzykaWeb/home.html" class="logo">Disqualifyy</a>
+      <a href="home.html" class="logo">Disqualify</a>
 
       <!-- Checkbox for the burger toggle (hidden) -->
       <input type="checkbox" id="menu-toggle" />
@@ -60,7 +60,7 @@
         <form class="search-form">
           <input type="text" placeholder="Search songs or artists..." />
           <button type="submit">
-            <a href="#">Search</a>
+             <i class="fa fa-search"></i> Search
           </button>
         </form>
         <div class="icons">
@@ -76,8 +76,8 @@
         <div class="trending-album">
           <div class="album-image">
             <img
-              src="/MzykaWeb/img/Frank_Ocean/Channel_Orange.jpg"
-              alt="Trending Album Cover"
+              src="img/Frank_Ocean/Channel_Orange.jpg"
+              alt="Channel Orange Album Cover by Frank Ocean"
             />
           </div>
           <div class="album-info">
@@ -88,38 +88,41 @@
           <div class="song-list">
             <h3>Songs</h3>
             <ul>
-              <li
-                data-src="audio/Frank_Ocean/Channel_Orange/Thinkin Bout You.mp3"
-              >
-                <i class="fa fa-play"></i> Start
-              </li>
-              <li
-                data-src="audio/Frank_Ocean/Channel_Orange/Thinkin Bout You.mp3"
-              >
-                <i class="fa fa-play"></i> Thinkin About You
-              </li>
-              <li data-src="audio/Frank_Ocean/Channel_Orange/Fertilizer.mp3">
-                <i class="fa fa-play"></i> Fertilizer
-              </li>
-              <li data-src="audio/Frank_Ocean/Channel_Orange/Sierra Leone.mp3">
-                <i class="fa fa-play"></i> Sierra Leone
-              </li>
-              <li data-src="audio/Frank_Ocean/Channel_Orange/Sweet Life.mp3">
-                <i class="fa fa-play"></i> Sweet Life
-              </li>
-              <li
-                data-src="audio/Frank_Ocean/Channel_Orange/Not Just Money.mp3"
-              >
-                <i class="fa fa-play"></i> Not Just Money
-              </li>
-              <li
-                data-src="audio/Frank_Ocean/Channel_Orange/Super Rich Kids.mp3"
-              >
-                <i class="fa fa-play"></i> Super Rich Kids
-              </li>
-              <li data-src="audio/Frank_Ocean/Channel_Orange/Pilot Jones.mp3">
-                <i class="fa fa-play"></i> Pilot Jones
-              </li>
+ <li>
+  <button class="song-play-btn" data-src="audio/Frank_Ocean/Channel_Orange/Thinkin Bout You.mp3" aria-label="Play Thinkin About You">
+    <i class="fa fa-play" aria-hidden="true"></i> Thinkin About You
+  </button>
+</li>
+<li>
+  <button class="song-play-btn" data-src="audio/Frank_Ocean/Channel_Orange/Fertilizer.mp3" aria-label="Play Fertilizer">
+    <i class="fa fa-play" aria-hidden="true"></i> Fertilizer
+  </button>
+</li>
+<li>
+  <button class="song-play-btn" data-src="audio/Frank_Ocean/Channel_Orange/Sierra Leone.mp3" aria-label="Play Sierra Leone">
+    <i class="fa fa-play" aria-hidden="true"></i> Sierra Leone
+  </button>
+</li>
+<li>
+  <button class="song-play-btn" data-src="audio/Frank_Ocean/Channel_Orange/Sweet Life.mp3" aria-label="Play Sweet Life">
+    <i class="fa fa-play" aria-hidden="true"></i> Sweet Life
+  </button>
+</li>
+<li>
+  <button class="song-play-btn" data-src="audio/Frank_Ocean/Channel_Orange/Not Just Money.mp3" aria-label="Play Not Just Money">
+    <i class="fa fa-play" aria-hidden="true"></i> Not Just Money
+  </button>
+</li>
+<li>
+  <button class="song-play-btn" data-src="audio/Frank_Ocean/Channel_Orange/Super Rich Kids.mp3" aria-label="Play Super Rich Kids">
+    <i class="fa fa-play" aria-hidden="true"></i> Super Rich Kids
+  </button>
+</li>
+<li>
+  <button class="song-play-btn" data-src="audio/Frank_Ocean/Channel_Orange/Pilot Jones.mp3" aria-label="Play Pilot Jones">
+    <i class="fa fa-play" aria-hidden="true"></i> Pilot Jones
+  </button>
+</li>
             </ul>
           </div>
         </div>
@@ -142,10 +145,12 @@
                 />
                 <div class="quick-picks-song-details">
                   <p class="quick-picks-song-title">Blinding Lights</p>
-                  <p class="quick-picks-song-artist">The Weekend</p>
+                  <p class="quick-picks-song-artist">The Weeknd</p>
                   <p class="quick-picks-song-duration">3:45</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+               <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div
@@ -159,15 +164,17 @@
                 />
                 <div class="quick-picks-song-details">
                   <p class="quick-picks-song-title">Starboy</p>
-                  <p class="quick-picks-song-artist">The Weekend</p>
+                  <p class="quick-picks-song-artist">The Weeknd</p>
                   <p class="quick-picks-song-duration">4:12</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                 <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div
                 class="quick-picks-song-card"
-                data-src="audio/Frank_Ocean//Blonde/Nights.mp3"
+                data-src="audio/Frank_Ocean/Blonde/Nights.mp3"
               >
                 <img
                   class="quick-picks-song-image"
@@ -179,7 +186,9 @@
                   <p class="quick-picks-song-artist">Frank Ocean</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+               <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div
@@ -196,7 +205,9 @@
                   <p class="quick-picks-song-artist">Frank Ocean</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div
@@ -211,11 +222,13 @@
                 <div class="quick-picks-song-details">
                   <p class="quick-picks-song-title">Timeless</p>
                   <p class="quick-picks-song-artist">
-                    The Weekend ft. Playboi Carti
+                    The Weeknd ft. Playboi Carti
                   </p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div
@@ -229,10 +242,12 @@
                 />
                 <div class="quick-picks-song-details">
                   <p class="quick-picks-song-title">One of The Girls</p>
-                  <p class="quick-picks-song-artist">The Weekend</p>
+                  <p class="quick-picks-song-artist">The Weeknd</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div class="quick-picks-song-card" data-src="song7.mp3">
@@ -246,7 +261,9 @@
                   <p class="quick-picks-song-artist">Tyler the Creator</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div class="quick-picks-song-card" data-src="song8.mp3">
@@ -260,7 +277,9 @@
                   <p class="quick-picks-song-artist">Missy Elliot</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+               <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
               <!-- Duplicate for seamless loop -->
               <div class="quick-picks-song-card" data-src="song1.mp3">
@@ -274,7 +293,9 @@
                   <p class="quick-picks-song-artist">Jay-Z</p>
                   <p class="quick-picks-song-duration">3:45</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div class="quick-picks-song-card" data-src="song2.mp3">
@@ -288,7 +309,9 @@
                   <p class="quick-picks-song-artist">Nicki Minaj</p>
                   <p class="quick-picks-song-duration">4:12</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+               <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div class="quick-picks-song-card" data-src="song3.mp3">
@@ -302,7 +325,9 @@
                   <p class="quick-picks-song-artist">Johnny Cash</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div class="quick-picks-song-card" data-src="song4.mp3">
@@ -318,7 +343,9 @@
                   <p class="quick-picks-song-artist">Megadeth</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div class="quick-picks-song-card" data-src="song5.mp3">
@@ -332,7 +359,9 @@
                   <p class="quick-picks-song-artist">BTS</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div class="quick-picks-song-card" data-src="song6.mp3">
@@ -346,7 +375,9 @@
                   <p class="quick-picks-song-artist">Lana del Rey</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div class="quick-picks-song-card" data-src="song7.mp3">
@@ -360,7 +391,9 @@
                   <p class="quick-picks-song-artist">The Roots</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
 
               <div class="quick-picks-song-card" data-src="song8.mp3">
@@ -374,7 +407,9 @@
                   <p class="quick-picks-song-artist">Metallica</p>
                   <p class="quick-picks-song-duration">2:58</p>
                 </div>
-                <i class="fa fa-play quick-picks-play-btn"></i>
+                <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -410,7 +445,9 @@
                 <p class="quick-picks-song-artist">SZA</p>
                 <p class="quick-picks-song-duration">3:45</p>
               </div>
-              <i class="fa fa-play quick-picks-play-btn"></i>
+             <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="quick-picks-song-card" data-src="song2.mp3">
@@ -424,7 +461,9 @@
                 <p class="quick-picks-song-artist">Kanye West</p>
                 <p class="quick-picks-song-duration">4:12</p>
               </div>
-              <i class="fa fa-play quick-picks-play-btn"></i>
+             <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="quick-picks-song-card" data-src="song3.mp3">
@@ -438,7 +477,9 @@
                 <p class="quick-picks-song-artist">Bad Bunny</p>
                 <p class="quick-picks-song-duration">2:58</p>
               </div>
-              <i class="fa fa-play quick-picks-play-btn"></i>
+              <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="quick-picks-song-card" data-src="song4.mp3">
@@ -452,7 +493,9 @@
                 <p class="quick-picks-song-artist">Drake</p>
                 <p class="quick-picks-song-duration">3:33</p>
               </div>
-              <i class="fa fa-play quick-picks-play-btn"></i>
+              <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="quick-picks-song-card" data-src="song5.mp3">
@@ -466,7 +509,9 @@
                 <p class="quick-picks-song-artist">Joy Division</p>
                 <p class="quick-picks-song-duration">4:05</p>
               </div>
-              <i class="fa fa-play quick-picks-play-btn"></i>
+              <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="quick-picks-song-card" data-src="song6.mp3">
@@ -480,7 +525,9 @@
                 <p class="quick-picks-song-artist">Kenny Rogers</p>
                 <p class="quick-picks-song-duration">4:05</p>
               </div>
-              <i class="fa fa-play quick-picks-play-btn"></i>
+              <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="quick-picks-song-card" data-src="song7.mp3">
@@ -494,7 +541,9 @@
                 <p class="quick-picks-song-artist">Judas Priest</p>
                 <p class="quick-picks-song-duration">4:05</p>
               </div>
-              <i class="fa fa-play quick-picks-play-btn"></i>
+              <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="quick-picks-song-card" data-src="song8.mp3">
@@ -508,7 +557,9 @@
                 <p class="quick-picks-song-artist">The Clash</p>
                 <p class="quick-picks-song-duration">4:05</p>
               </div>
-              <i class="fa fa-play quick-picks-play-btn"></i>
+              <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="quick-picks-song-card" data-src="song9.mp3">
@@ -522,7 +573,9 @@
                 <p class="quick-picks-song-artist">Kendrick Lamar</p>
                 <p class="quick-picks-song-duration">4:05</p>
               </div>
-              <i class="fa fa-play quick-picks-play-btn"></i>
+              <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="quick-picks-song-card" data-src="song10.mp3">
@@ -536,7 +589,9 @@
                 <p class="quick-picks-song-artist">NAS</p>
                 <p class="quick-picks-song-duration">4:05</p>
               </div>
-              <i class="fa fa-play quick-picks-play-btn"></i>
+              <button class="quick-picks-play-btn" aria-label="Play song">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
           </div>
         </div>
@@ -547,7 +602,7 @@
       <div class="cards">
         <div class="mzyka-vibes-card">
           <div class="mzyka-vibes-header">
-            <h2>Mzyka Vibes</h2>
+            <h2>Disqualify Vibes</h2>
           </div>
           <div class="vibe-container">
             <div
@@ -650,7 +705,7 @@
         </div>
 
         <div class="music-news-card">
-          <h2>Disqualifyy News 📰</h2>
+          <h2>Disqualify News 📰</h2>
 
           <!-- Top Two News Side-by-Side -->
           <div class="top-two-news">
@@ -710,7 +765,7 @@
             <a href="ArtistPage.html?artist=the_weeknd">
               <div class="artist-card">
                 <div class="artist-img">
-                  <img src="img/The_Weeknd/TheWeeknd.jpg" alt="The Weekend" />
+                  <img src="img/The_Weeknd/TheWeeknd.jpg" alt="The Weeknd" />
                 </div>
                 <p class="artist-name">The Weeknd</p>
               </div>
@@ -724,7 +779,7 @@
                     alt="Artist 3"
                   />
                 </div>
-                <p class="artist-name">Micheal Jackson</p>
+                <p class="artist-name">Michael Jackson</p>
               </div>
             </a>
 
@@ -822,9 +877,9 @@
       <footer class="footer">
         <div class="footer-content">
           <div class="footer-section about">
-            <h2>About Mzyka</h2>
+            <h2>About Disqualify</h2>
             <p>
-              Mzyka is your favorite music streaming service, providing an
+              Disqualify is your favorite music streaming service, providing an
               immersive musical experience.
             </p>
           </div>
@@ -841,11 +896,11 @@
           <div class="footer-section contact">
             <h2>Contact</h2>
             <p>
-              Email: <a href="mailto:contact@mzyka.com">contact@mzyka.com</a>
+              Email: <a href="mailto:contact@disqualify.com">contact@disqualify.com</a>
             </p>
           </div>
         </div>
-        <div class="footer-bottom">&copy; 2025 Mzyka. All rights reserved.</div>
+        <div class="footer-bottom">&copy; 2025 Disqualify. All rights reserved.</div>
       </footer>
     </section>
 
