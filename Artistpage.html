@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artist Page - Mzyka</title>
+    <link rel="stylesheet" href="Home/COMBINED.CSS" />
+    <link rel="stylesheet" href="ArtistPage/ArtistPage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <!-- Logo -->
+      <a href="home.html" class="logo">Mzykaa</a>
+
+      <!-- Checkbox for the burger toggle (hidden) -->
+      <input type="checkbox" id="menu-toggle" />
+
+      <!-- Label that acts as the "hamburger" icon -->
+      <label for="menu-toggle" class="menu-icon">
+        <span class="fa fa-bars"></span>
+      </label>
+
+      <!-- Nav container -->
+      <nav class="navbar">
+        <!-- Top nav links -->
+        <div class="navbar-top">
+          <a href="/MzykaWeb/home.html"><i class="fa fa-home"></i> Home</a>
+          <a href="/MzykaWeb/Search/search.html"
+            ><i class="fa fa-search"></i> Search</a
+          >
+          <a href="/MzykaWeb/Library/Library.html"
+            ><i class="fa fa-folder"></i> Playlist</a
+          >
+        </div>
+        <!-- Bottom nav links -->
+        <div class="navbar-bottom">
+          <a href="/MzykaWeb/Settings/settings.html"
+            ><i class="fa fa-cog"></i> Settings</a
+          >
+          <a href="/MzykaWeb/Login/login.html"
+            ><i class="fa fa-sign-out"></i> Logout</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <section class="main-page">
+      <div class="top-bar">
+        <form class="search-form">
+          <input type="text" placeholder="Search songs or artists..." />
+          <button type="submit">Search</button>
+        </form>
+        <div class="icons">
+          <a href="/MzykaWeb/Accountpage/accountpage.html"
+            ><i class="fa fa-user-circle"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="cards">
+        <!-- Artist Profile Section -->
+        <div class="artist-profile">
+          <div class="artist-image">
+            <img id="artist-img" alt="Artist Image" />
+          </div>
+          <div class="artist-info">
+            <h1 class="artist-name" id="artist-name"></h1>
+            <div class="artist-stats" id="artist-stats"></div>
+            <p class="artist-bio" id="artist-bio"></p>
+            <div class="artist-actions">
+              <button class="btn follow-btn">
+                <i class="fa fa-plus"></i> Follow
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Latest Album Section -->
+        <div class="latest-album-card">
+          <h2 class="title-albums">Latest Album</h2>
+          <div class="album-container" id="latest-album-container"></div>
+        </div>
+
+        <!-- Popular Songs Section -->
+        <div class="popular-songs-card">
+          <h2>Popular Songs</h2>
+          <div class="songs-container" id="songs-container"></div>
+        </div>
+
+        <!-- Discography Section -->
+        <div class="albums-slider">
+          <div class="slider-header">
+            <h2>Discography</h2>
+            <div class="view-options">
+              <div class="view-option active" data-view="all">All</div>
+              <div class="view-option" data-view="album">Albums</div>
+              <div class="view-option" data-view="single">Singles</div>
+            </div>
+          </div>
+          <div class="slider-wrapper">
+            <button class="slider-arrow left-arrow">&#10094;</button>
+            <div class="slider-track-container">
+              <div class="slider-track" id="discography-container"></div>
+            </div>
+            <button class="slider-arrow right-arrow">&#10095;</button>
+          </div>
+        </div>
+
+        <audio id="audio-element" style="display: none">
+          <source src="" type="audio/mpeg" />
+        </audio>
+
+        <!-- Audio Player - Needs Fixing ( volume control, porgress bar, play/pause, grid system)-->
+        <div class="audio-player" id="audio-player" style="display: none">
+          <div class="player-content">
+            <div class="player-info">
+              <div class="player-album-art">
+                <img id="current-track-art" alt="Album Art" />
+              </div>
+              <div class="track-info">
+                <div class="track-title" id="current-track-title"></div>
+                <div class="track-artist" id="current-track-artist"></div>
+              </div>
+            </div>
+
+            <div class="player-controls">
+              <div class="control-buttons">
+                <button class="control-btn" id="shuffle-btn">
+                  <i class="fa fa-random"></i>
+                </button>
+                <button class="control-btn" id="prev-btn">
+                  <i class="fa fa-step-backward"></i>
+                </button>
+                <button class="control-btn" id="play-pause-btn">
+                  <i class="fa fa-play"></i>
+                </button>
+                <button class="control-btn" id="next-btn">
+                  <i class="fa fa-step-forward"></i>
+                </button>
+                <button class="control-btn" id="like-btn">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+              </div>
+              <div class="progress-bar" id="progress-bar">
+                <div class="progress-track">
+                  <div class="progress-fill" id="progress"></div>
+                  <div class="progress-thumb" id="progress-thumb"></div>
+                </div>
+              </div>
+              <div class="player-time">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="volume-control">
+            <button id="mute-btn" class="control-btn">
+              <i class="fa fa-volume-up"></i>
+            </button>
+            <!-- Persistent volume slider -->
+            <input
+              type="range"
+              class="volume-slider"
+              min="0"
+              max="1"
+              step="0.01"
+              value="1"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Add footer later-->
+    </section>
+
+    <script src="audioPlayer.js" defer></script>
+    <script src="ArtistPage/ArtistPage.js"></script>
+  </body>
+</html>

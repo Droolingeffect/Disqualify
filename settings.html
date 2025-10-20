@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Myzyka Settings</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../Home/COMBINED.CSS" />
+  <link rel="stylesheet" href="settings.css" />
+  
+</head>
+
+
+<body >
+  <header class="header">
+    <a href="#home" class="logo">Mzykaa</a>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <span class="fa fa-bars"></span>
+    </label>
+    <nav class="navbar">
+      <div class="navbar-top">
+        <a href="/MzykaWeb/home.html"><i class="fa fa-home"></i> Home</a>
+        <a href="/MzykaWeb/Search/search.html"><i class="fa fa-search"></i> Search</a>
+        <a href="/MzykaWeb/Library/Library.html"><i class="fa fa-folder"></i> Playlist</a>
+      </div>
+      <div class="navbar-bottom">
+        <a href="/MzykaWeb/Settings/settings.html"><i class="fa fa-cog"></i> Settings</a>
+        <a href="/MzykaWeb/Accountpage/accountpage.html"><i class="fa fa-user-circle"></i> Account</a>
+        
+        <a href="/MzykaWeb/Login/logout.html"><i class="fa fa-sign-out"></i> Logout</a>
+      </div>
+    </nav>
+  </header>
+  
+  <section class="main-page">
+      <h1 class="page-title">Myzyka Settings</h1>
+    
+
+    <section class="settings-wrapper">
+      <div class="settings-container">
+        <h2>Customize Experience</h2>
+        <form id="settings-form">
+          <div class="form-group">
+            <label for="theme">Theme</label>
+            <select id="theme" name="theme">
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notifications">Notifications</label>
+            <select id="notifications" name="notifications">
+              <option value="enabled">Enabled</option>
+              <option value="disabled">Disabled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="privacy">Privacy Settings</label>
+            <select id="privacy" name="privacy">
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+            </select>
+          </div>
+
+          <button type="submit">Save Changes</button>
+        </form>
+      </div>
+    </section>
+  </section>
+
+  <script src="settings.js"></script>
+</body>
+</html>

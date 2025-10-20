@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disqualiffyy</title>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/HomeStyle.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <!-- Logo -->
+      <a href="/MzykaWeb/home.html" class="logo">Disqualifyy</a>
+
+      <!-- Checkbox for the burger toggle (hidden) -->
+      <input type="checkbox" id="menu-toggle" />
+
+      <!-- Label that acts as the "hamburger" icon -->
+      <label for="menu-toggle" class="menu-icon">
+        <span class="fa fa-bars"></span>
+      </label>
+
+      <!-- Nav container -->
+      <nav class="navbar">
+        <!-- Top nav links -->
+        <div class="navbar-top">
+          <a href="#"><i class="fa fa-home"></i> Home</a>
+          <a href="#"
+            ><i class="fa fa-search"></i> Search</a
+          >
+          <a href="#"
+            ><i class="fa fa-folder"></i> Playlist</a
+          >
+        </div>
+        <!-- Bottom nav links -->
+        <div class="navbar-bottom">
+          <a href="#"
+            ><i class="fa fa-cog"></i> Settings</a
+          >
+          <a href="#"
+            ><i class="fa fa-sign-out"></i> Logout</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <section class="main-page">
+      <div class="top-bar">
+        <form class="search-form">
+          <input type="text" placeholder="Search songs or artists..." />
+          <button type="submit">
+            <a href="#">Search</a>
+          </button>
+        </form>
+        <div class="icons">
+          <a href="#notifications"><i class="fa fa-bell"></i></a>
+          <a href="Accountpage/accountpage.html"
+            ><i class="fa fa-user-circle"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="cards">
+        <!-- Trending Album Card -->
+        <div class="trending-album">
+          <div class="album-image">
+            <img
+              src="/MzykaWeb/img/Frank_Ocean/Channel_Orange.jpg"
+              alt="Trending Album Cover"
+            />
+          </div>
+          <div class="album-info">
+            <h2>Channel Orange</h2>
+            <p class="artist">Frank Ocean</p>
+            <p class="release-date">Released: July 10, 2012</p>
+          </div>
+          <div class="song-list">
+            <h3>Songs</h3>
+            <ul>
+              <li
+                data-src="audio/Frank_Ocean/Channel_Orange/Thinkin Bout You.mp3"
+              >
+                <i class="fa fa-play"></i> Start
+              </li>
+              <li
+                data-src="audio/Frank_Ocean/Channel_Orange/Thinkin Bout You.mp3"
+              >
+                <i class="fa fa-play"></i> Thinkin About You
+              </li>
+              <li data-src="audio/Frank_Ocean/Channel_Orange/Fertilizer.mp3">
+                <i class="fa fa-play"></i> Fertilizer
+              </li>
+              <li data-src="audio/Frank_Ocean/Channel_Orange/Sierra Leone.mp3">
+                <i class="fa fa-play"></i> Sierra Leone
+              </li>
+              <li data-src="audio/Frank_Ocean/Channel_Orange/Sweet Life.mp3">
+                <i class="fa fa-play"></i> Sweet Life
+              </li>
+              <li
+                data-src="audio/Frank_Ocean/Channel_Orange/Not Just Money.mp3"
+              >
+                <i class="fa fa-play"></i> Not Just Money
+              </li>
+              <li
+                data-src="audio/Frank_Ocean/Channel_Orange/Super Rich Kids.mp3"
+              >
+                <i class="fa fa-play"></i> Super Rich Kids
+              </li>
+              <li data-src="audio/Frank_Ocean/Channel_Orange/Pilot Jones.mp3">
+                <i class="fa fa-play"></i> Pilot Jones
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Trending Now Slider -->
+        <div class="trending-slider">
+          <div class="trending-slider-header">
+            <h2>Trending Now</h2>
+          </div>
+          <div class="slider-track-container">
+            <div class="slider-track">
+              <div
+                class="quick-picks-song-card"
+                data-src="audio/The_Weeknd/Blinding Lights.mp3"
+              >
+                <img
+                  class="quick-picks-song-image"
+                  src="img/The_Weeknd/AfterHours.jpg"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Blinding Lights</p>
+                  <p class="quick-picks-song-artist">The Weekend</p>
+                  <p class="quick-picks-song-duration">3:45</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div
+                class="quick-picks-song-card"
+                data-src="audio/The_Weeknd/Starboy.mp3"
+              >
+                <img
+                  class="quick-picks-song-image"
+                  src="img/The_Weeknd/Starboy.jpg"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Starboy</p>
+                  <p class="quick-picks-song-artist">The Weekend</p>
+                  <p class="quick-picks-song-duration">4:12</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div
+                class="quick-picks-song-card"
+                data-src="audio/Frank_Ocean//Blonde/Nights.mp3"
+              >
+                <img
+                  class="quick-picks-song-image"
+                  src="img/Frank_Ocean/Blonde.jpg"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Nights</p>
+                  <p class="quick-picks-song-artist">Frank Ocean</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div
+                class="quick-picks-song-card"
+                data-src="audio/Frank_Ocean/Nostalgia_Ultra/Novacane.mp3"
+              >
+                <img
+                  class="quick-picks-song-image"
+                  src="img/Frank_Ocean/Nostalgia_Ultra.jpg"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Nostalgia Ultra</p>
+                  <p class="quick-picks-song-artist">Frank Ocean</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div
+                class="quick-picks-song-card"
+                data-src="audio/The_Weeknd/Timeless (feat. Playboi Carti).mp3"
+              >
+                <img
+                  class="quick-picks-song-image"
+                  src="img/The_Weeknd/HurryUpTomorrow.jpg"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Timeless</p>
+                  <p class="quick-picks-song-artist">
+                    The Weekend ft. Playboi Carti
+                  </p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div
+                class="quick-picks-song-card"
+                data-src="audio/The_Weeknd/One Of The Girls (with JENNIE, Lily Rose Depp).mp3"
+              >
+                <img
+                  class="quick-picks-song-image"
+                  src="img/Playboi_Carti/IAMMUSIC.jpg"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">One of The Girls</p>
+                  <p class="quick-picks-song-artist">The Weekend</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div class="quick-picks-song-card" data-src="song7.mp3">
+                <img
+                  class="quick-picks-song-image"
+                  src="https://www.billboard.com/wp-content/uploads/media/tyler-the-creator-igor-album-art-2019-billboard-embed.jpg?w=1024"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Igor</p>
+                  <p class="quick-picks-song-artist">Tyler the Creator</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div class="quick-picks-song-card" data-src="song8.mp3">
+                <img
+                  class="quick-picks-song-image"
+                  src="https://www.billboard.com/wp-content/uploads/2023/07/missy-elliott-under-construction-cover-2002-billboard-1240.jpg?w=1024"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Under Construction</p>
+                  <p class="quick-picks-song-artist">Missy Elliot</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+              <!-- Duplicate for seamless loop -->
+              <div class="quick-picks-song-card" data-src="song1.mp3">
+                <img
+                  class="quick-picks-song-image"
+                  src="https://www.billboard.com/wp-content/uploads/2023/07/jay-z-the-black-album-cover-2003-billboard-1240.jpg?w=1240"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">The Black Album</p>
+                  <p class="quick-picks-song-artist">Jay-Z</p>
+                  <p class="quick-picks-song-duration">3:45</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div class="quick-picks-song-card" data-src="song2.mp3">
+                <img
+                  class="quick-picks-song-image"
+                  src="https://www.billboard.com/wp-content/uploads/2022/03/42.-Nicki-Minaj-%E2%80%98The-Pinkprint-2014-album-art-billboard-1240.jpg?w=1024"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">The Pinkprint</p>
+                  <p class="quick-picks-song-artist">Nicki Minaj</p>
+                  <p class="quick-picks-song-duration">4:12</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div class="quick-picks-song-card" data-src="song3.mp3">
+                <img
+                  class="quick-picks-song-image"
+                  src="https://www.billboard.com/wp-content/uploads/2022/03/39.-Johnny-Cash-%E2%80%98American-IV-The-Man-Comes-Around-2002-album-art-billboard-1240.jpg?w=1024"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">American IV</p>
+                  <p class="quick-picks-song-artist">Johnny Cash</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div class="quick-picks-song-card" data-src="song4.mp3">
+                <img
+                  class="quick-picks-song-image"
+                  src="https://www.billboard.com/wp-content/uploads/2023/07/megadeth-peace-sells-cover-1986-billboard-1240.jpg?w=1024"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">
+                    Peace Sells... But Who's Buying?
+                  </p>
+                  <p class="quick-picks-song-artist">Megadeth</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div class="quick-picks-song-card" data-src="song5.mp3">
+                <img
+                  class="quick-picks-song-image"
+                  src="https://www.billboard.com/wp-content/uploads/2023/08/BTS-Map-of-the-Soul-7-The-Journey-2020-billboard-1240.jpg?w=1024"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Map of the Soul: 7</p>
+                  <p class="quick-picks-song-artist">BTS</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div class="quick-picks-song-card" data-src="song6.mp3">
+                <img
+                  class="quick-picks-song-image"
+                  src="https://www.billboard.com/wp-content/uploads/2023/07/Lana-Del-Rey-Norman-F-king-Rockwell.jpg?w=1026"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Norman F-King</p>
+                  <p class="quick-picks-song-artist">Lana del Rey</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div class="quick-picks-song-card" data-src="song7.mp3">
+                <img
+                  class="quick-picks-song-image"
+                  src="https://www.billboard.com/wp-content/uploads/2022/03/18.-The-Roots-%E2%80%98Things-Fall-Apart-1999-album-art-billboard-1240.jpg?w=1033"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Things Fell Apart</p>
+                  <p class="quick-picks-song-artist">The Roots</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+
+              <div class="quick-picks-song-card" data-src="song8.mp3">
+                <img
+                  class="quick-picks-song-image"
+                  src="https://www.billboard.com/wp-content/uploads/2022/03/35.-Metallica-%E2%80%98Master-of-Puppets-1986-album-art-billboard-1240.jpg?w=1024"
+                  alt="Song Cover"
+                />
+                <div class="quick-picks-song-details">
+                  <p class="quick-picks-song-title">Master of Puppets</p>
+                  <p class="quick-picks-song-artist">Metallica</p>
+                  <p class="quick-picks-song-duration">2:58</p>
+                </div>
+                <i class="fa fa-play quick-picks-play-btn"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Cards -->
+        <div class="featured-card">
+          <div class="featured-image">
+            <img src="login/logo.jpg" alt="Featured Content" />
+          </div>
+          <div class="featured-content">
+            <h2>Featured Content</h2>
+            <p>
+              Discover exclusive tracks, artist interviews, and
+              behind-the-scenes insights curated just for you. Dive into a
+              unique listening experience.
+            </p>
+            <button class="featured-btn">Listen Now</button>
+          </div>
+        </div>
+        <!-- Quick Picks Card -->
+        <div class="quick-picks">
+          <h2>Quick Picks</h2>
+          <div class="quick-picks-container">
+            <div class="quick-picks-song-card" data-src="song1.mp3">
+              <img
+                class="quick-picks-song-image"
+                src="https://www.billboard.com/wp-content/uploads/2023/07/SZA-SOS-album-art-billboard-1240.jpg?w=1240"
+                alt="Song Cover"
+              />
+              <div class="quick-picks-song-details">
+                <p class="quick-picks-song-title">SOS</p>
+                <p class="quick-picks-song-artist">SZA</p>
+                <p class="quick-picks-song-duration">3:45</p>
+              </div>
+              <i class="fa fa-play quick-picks-play-btn"></i>
+            </div>
+
+            <div class="quick-picks-song-card" data-src="song2.mp3">
+              <img
+                class="quick-picks-song-image"
+                src="https://www.billboard.com/wp-content/uploads/2022/03/33.-Kanye-West-%E2%80%98My-Beautiful-Dark-Twisted-Fantasy-2010-album-art-billboard-1240.jpg?w=1024"
+                alt="Song Cover"
+              />
+              <div class="quick-picks-song-details">
+                <p class="quick-picks-song-title">My Beautiful</p>
+                <p class="quick-picks-song-artist">Kanye West</p>
+                <p class="quick-picks-song-duration">4:12</p>
+              </div>
+              <i class="fa fa-play quick-picks-play-btn"></i>
+            </div>
+
+            <div class="quick-picks-song-card" data-src="song3.mp3">
+              <img
+                class="quick-picks-song-image"
+                src="https://www.billboard.com/wp-content/uploads/2023/07/Bad-Bunny-Un-Verano-Sin-Ti-album-art-billboard-1240.jpg?w=1024"
+                alt="Song Cover"
+              />
+              <div class="quick-picks-song-details">
+                <p class="quick-picks-song-title">Un Verano Sin Ti</p>
+                <p class="quick-picks-song-artist">Bad Bunny</p>
+                <p class="quick-picks-song-duration">2:58</p>
+              </div>
+              <i class="fa fa-play quick-picks-play-btn"></i>
+            </div>
+
+            <div class="quick-picks-song-card" data-src="song4.mp3">
+              <img
+                class="quick-picks-song-image"
+                src="https://www.billboard.com/wp-content/uploads/2022/03/22.-Drake-If-Youre-Reading-This-Its-Too-Late-2015-album-art-billboard-1240.jpg?w=1024"
+                alt="Song Cover"
+              />
+              <div class="quick-picks-song-details">
+                <p class="quick-picks-song-title">Time</p>
+                <p class="quick-picks-song-artist">Drake</p>
+                <p class="quick-picks-song-duration">3:33</p>
+              </div>
+              <i class="fa fa-play quick-picks-play-btn"></i>
+            </div>
+
+            <div class="quick-picks-song-card" data-src="song5.mp3">
+              <img
+                class="quick-picks-song-image"
+                src="https://www.billboard.com/wp-content/uploads/2022/03/20.-Joy-Division-%E2%80%98Unknown-Pleasures-1979-album-art-billboard-1240.jpg?w=1024"
+                alt="Song Cover"
+              />
+              <div class="quick-picks-song-details">
+                <p class="quick-picks-song-title">Unknown Pleasures</p>
+                <p class="quick-picks-song-artist">Joy Division</p>
+                <p class="quick-picks-song-duration">4:05</p>
+              </div>
+              <i class="fa fa-play quick-picks-play-btn"></i>
+            </div>
+
+            <div class="quick-picks-song-card" data-src="song6.mp3">
+              <img
+                class="quick-picks-song-image"
+                src="https://www.billboard.com/wp-content/uploads/2023/07/kenny-rogers-the-gambler-1978-billboard-1240.jpg?w=1024"
+                alt="Song Cover"
+              />
+              <div class="quick-picks-song-details">
+                <p class="quick-picks-song-title">The Gambler</p>
+                <p class="quick-picks-song-artist">Kenny Rogers</p>
+                <p class="quick-picks-song-duration">4:05</p>
+              </div>
+              <i class="fa fa-play quick-picks-play-btn"></i>
+            </div>
+
+            <div class="quick-picks-song-card" data-src="song7.mp3">
+              <img
+                class="quick-picks-song-image"
+                src="https://www.billboard.com/wp-content/uploads/2022/03/19.-Judas-Priest-%E2%80%98British-Steel-1980-album-art-billboard-1240.jpg?w=1033"
+                alt="Song Cover"
+              />
+              <div class="quick-picks-song-details">
+                <p class="quick-picks-song-title">British Steel</p>
+                <p class="quick-picks-song-artist">Judas Priest</p>
+                <p class="quick-picks-song-duration">4:05</p>
+              </div>
+              <i class="fa fa-play quick-picks-play-btn"></i>
+            </div>
+
+            <div class="quick-picks-song-card" data-src="song8.mp3">
+              <img
+                class="quick-picks-song-image"
+                src="https://www.billboard.com/wp-content/uploads/2022/03/16.-The-Clash-%E2%80%98London-Calling-1979-album-art-billboard-1240.jpg?w=1030"
+                alt="Song Cover"
+              />
+              <div class="quick-picks-song-details">
+                <p class="quick-picks-song-title">London Calling</p>
+                <p class="quick-picks-song-artist">The Clash</p>
+                <p class="quick-picks-song-duration">4:05</p>
+              </div>
+              <i class="fa fa-play quick-picks-play-btn"></i>
+            </div>
+
+            <div class="quick-picks-song-card" data-src="song9.mp3">
+              <img
+                class="quick-picks-song-image"
+                src="https://www.billboard.com/wp-content/uploads/2022/03/13.-Kendrick-Lamar-To-Pimp-a-Butterfly-2015-album-art-billboard-1240.jpg?w=1024"
+                alt="Song Cover"
+              />
+              <div class="quick-picks-song-details">
+                <p class="quick-picks-song-title">To Pimp a Butterfly</p>
+                <p class="quick-picks-song-artist">Kendrick Lamar</p>
+                <p class="quick-picks-song-duration">4:05</p>
+              </div>
+              <i class="fa fa-play quick-picks-play-btn"></i>
+            </div>
+
+            <div class="quick-picks-song-card" data-src="song10.mp3">
+              <img
+                class="quick-picks-song-image"
+                src="https://www.billboard.com/wp-content/uploads/2022/03/15.-Nas-%E2%80%98Illmatic-1994-album-art-billboard-1240.jpg?w=1024"
+                alt="Song Cover"
+              />
+              <div class="quick-picks-song-details">
+                <p class="quick-picks-song-title">Illmatic</p>
+                <p class="quick-picks-song-artist">NAS</p>
+                <p class="quick-picks-song-duration">4:05</p>
+              </div>
+              <i class="fa fa-play quick-picks-play-btn"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-page-2">
+      <div class="cards">
+        <div class="mzyka-vibes-card">
+          <div class="mzyka-vibes-header">
+            <h2>Mzyka Vibes</h2>
+          </div>
+          <div class="vibe-container">
+            <div
+              class="vibe-card"
+              style="
+                background-image: url('https://i1.sndcdn.com/artworks-eZv86Xp18aHYjkwE-llrhIQ-t500x500.jpg');
+              "
+            >
+              <span class="vibe-title">Chill</span>
+            </div>
+            <div
+              class="vibe-card"
+              style="
+                background-image: url('https://cdn-images.dzcdn.net/images/cover/9ca05480e015ea1d55700f621cc1888a/1900x1900-000000-80-0-0.jpg');
+              "
+            >
+              <span class="vibe-title">Party</span>
+            </div>
+            <div
+              class="vibe-card"
+              style="
+                background-image: url('https://play-lh.googleusercontent.com/oQnd9u11H7j1g99Pzswt5LTm52g8XyMrgz0GRBX5lmzdPv2Vt7bBrOKgbVbs-gHc504=w240-h480-rw');
+              "
+            >
+              <span class="vibe-title">Focus</span>
+            </div>
+            <div
+              class="vibe-card"
+              style="
+                background-image: url('https://i1.sndcdn.com/artworks-FDmrzyn7ptB28ynL-4CF7Ug-t500x500.jpg');
+              "
+            >
+              <span class="vibe-title">Workout</span>
+            </div>
+            <div
+              class="vibe-card"
+              style="
+                background-image: url('https://i1.sndcdn.com/artworks-cpjAt5gbqaH3rVTe-BeeWAw-t1080x1080.jpg');
+              "
+            >
+              <span class="vibe-title">Sleep</span>
+            </div>
+            <div
+              class="vibe-card"
+              style="
+                background-image: url('https://media.istockphoto.com/id/184978684/photo/love-song.jpg?s=612x612&w=0&k=20&c=4M_ZvioFfQphcgCOdqN0AC0Ffv24U9JQ6ouJlbuah2M=');
+              "
+            >
+              <span class="vibe-title">Romantic</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="top-artists-card">
+          <h2>Top Artists of the Week</h2>
+          <ol class="top-artists-list">
+            <li class="rank-1">
+              <span class="rank-badge">🥇</span>
+              <img src="img/Frank_Ocean/FrankOcean.jpg" alt="Artist 1" />
+              <span class="artist-name">Frank Ocean</span>
+              <span class="listeners">12.3K</span>
+            </li>
+            <li class="rank-2">
+              <span class="rank-badge">🥈</span>
+              <img
+                src="https://yt3.googleusercontent.com/ZvvxGM8ljVVdc6c20OYi8qwtM5ZpF7Vcj5ztl0484PDC0GdVuOxEXwk9FWIoZEASNNKTXJ9_VQ=s900-c-k-c0x00ffffff-no-rj"
+                alt="Artist 2"
+              />
+              <span class="artist-name">Sean Paul</span>
+              <span class="listeners">10.8K</span>
+            </li>
+            <li class="rank-3">
+              <span class="rank-badge">🥉</span>
+              <img
+                src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS2Tyz9T16sepx48VDbeQlnO35HhMt37sTDIkZaRilQyOCYg7qktFHBqacbF9f6ikRA5C_oOztfFkBsGX6s1JO9PQ"
+                alt="Artist 3"
+              />
+              <span class="artist-name">Kendrick Lamar</span>
+              <span class="listeners">9.2K</span>
+            </li>
+            <li>
+              <span class="rank-badge">4</span>
+              <img
+                src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQc_ahIbnmtQfoZLzsnjeUXz0X-DP5ZhZDIvD9BTnjUluV_nXhPikUg7Wnsa5Me3YA494_d3heEaQEQXVfoywW40g"
+                alt="Artist 4"
+              />
+              <span class="artist-name">Don Toliver</span>
+              <span class="listeners">8.5K</span>
+            </li>
+            <li>
+              <span class="rank-badge">5</span>
+              <img
+                src="https://thesciencesurvey.com/wp-content/uploads/2024/06/Dua_Lipa-0829.jpg"
+                alt="Artist 5"
+              />
+              <span class="artist-name">Dua Lipa</span>
+              <span class="listeners">7.9K</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="music-news-card">
+          <h2>Disqualifyy News 📰</h2>
+
+          <!-- Top Two News Side-by-Side -->
+          <div class="top-two-news">
+            <div class="news-split">
+              <img
+                src="https://media.newyorker.com/photos/66d0e1a0dbfcd564cf6b198b/master/w_2560%2Cc_limit/Brickner-Wood-Drake.jpg"
+                alt="News 1"
+              />
+              <div class="news-split-text">
+                <h3>🎤 Drake Drops Surprise Album</h3>
+                <p>
+                  Drake shocked fans with a midnight drop. Fans are loving it!
+                </p>
+              </div>
+            </div>
+            <div class="news-split">
+              <img
+                src="https://www.billboard.com/wp-content/uploads/2021/05/The-Weeknd-and-Ariana-Grande-iheartradio-music-awards-2021-billboard-1548-1622160460.jpg?w=942&h=623&crop=1"
+                alt="News 2"
+              />
+              <div class="news-split-text">
+                <h3>💥 Ariana & The Weeknd Collab</h3>
+                <p>The power duo returns with a chart-topping track.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scrollable News Feed -->
+          <div class="news-feed">
+            <div class="news-item">
+              <h3>🎶 Billboard Shifts Algorithm</h3>
+              <p>Streaming counts now weigh more in rankings.</p>
+            </div>
+            <div class="news-item">
+              <h3>🔊 AI-Generated Music Goes Mainstream</h3>
+              <p>Labels are investing in AI for music creation.</p>
+            </div>
+            <div class="news-item">
+              <h3>🎧 Spotify Launches Concert Feed</h3>
+              <p>Real-time concert alerts for your favorite artists.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-artists-card">
+          <h2>🎙️ Featured Artists</h2>
+          <div class="artist-gallery">
+            <a href="ArtistPage.html?artist=frank_ocean">
+              <div class="artist-card">
+                <div class="artist-img">
+                  <img src="img/Frank_Ocean/FrankOcean.jpg" alt="Frank Ocean" />
+                </div>
+                <p class="artist-name">Frank Ocean</p>
+              </div>
+            </a>
+
+            <a href="ArtistPage.html?artist=the_weeknd">
+              <div class="artist-card">
+                <div class="artist-img">
+                  <img src="img/The_Weeknd/TheWeeknd.jpg" alt="The Weekend" />
+                </div>
+                <p class="artist-name">The Weeknd</p>
+              </div>
+            </a>
+
+            <a href="ArtistPage.html?artist=">
+              <div class="artist-card">
+                <div class="artist-img">
+                  <img
+                    src="https://www.songhall.org/images/uploads/exhibits/Michael_Jackson.jpg"
+                    alt="Artist 3"
+                  />
+                </div>
+                <p class="artist-name">Micheal Jackson</p>
+              </div>
+            </a>
+
+            <a href="ArtistPage.html?artist=">
+              <div class="artist-card">
+                <div class="artist-img">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BMTg0NzY2NjYzM15BMl5BanBnXkFtZTcwNzk5NTc0NA@@._V1_FMjpg_UX1000_.jpg"
+                    alt="Artist 4"
+                  />
+                </div>
+                <p class="artist-name">David Guetta</p>
+              </div>
+            </a>
+
+            <a href="ArtistPage.html?artist=">
+              <div class="artist-card">
+                <div class="artist-img">
+                  <img
+                    src="https://yt3.googleusercontent.com/ZvvxGM8ljVVdc6c20OYi8qwtM5ZpF7Vcj5ztl0484PDC0GdVuOxEXwk9FWIoZEASNNKTXJ9_VQ=s900-c-k-c0x00ffffff-no-rj"
+                    alt="Artist 5"
+                  />
+                </div>
+                <p class="artist-name">Sean Paul</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <audio id="audio-element" style="display: none">
+        <source src="" type="audio/mpeg" />
+      </audio>
+
+      <div class="audio-player" id="audio-player" style="display: none">
+        <div class="player-content">
+          <div class="player-info">
+            <div class="player-album-art">
+              <img id="current-track-art" alt="Album Art" />
+            </div>
+            <div class="track-info">
+              <div class="track-title" id="current-track-title"></div>
+              <div class="track-artist" id="current-track-artist"></div>
+            </div>
+          </div>
+
+          <div class="player-controls">
+            <div class="control-buttons">
+              <button class="control-btn" id="shuffle-btn">
+                <i class="fa fa-random"></i>
+              </button>
+              <button class="control-btn" id="prev-btn">
+                <i class="fa fa-step-backward"></i>
+              </button>
+              <button class="control-btn" id="play-pause-btn">
+                <i class="fa fa-play"></i>
+              </button>
+              <button class="control-btn" id="next-btn">
+                <i class="fa fa-step-forward"></i>
+              </button>
+              <button class="control-btn" id="like-btn">
+                <i class="fa fa-heart-o"></i>
+              </button>
+            </div>
+
+            <div class="progress-bar" id="progress-bar">
+              <div class="progress-track">
+                <div class="progress-fill" id="progress"></div>
+                <div class="progress-thumb" id="progress-thumb"></div>
+              </div>
+            </div>
+
+            <div class="player-time">
+              <span id="current-time">0:00</span>
+              <span id="duration">0:00</span>
+            </div>
+          </div>
+
+          <div class="volume-control">
+            <button id="mute-btn" class="control-btn">
+              <i class="fa fa-volume-up"></i>
+            </button>
+            <input
+              type="range"
+              class="volume-slider"
+              min="0"
+              max="1"
+              step="0.01"
+              value="1"
+            />
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h2>About Mzyka</h2>
+            <p>
+              Mzyka is your favorite music streaming service, providing an
+              immersive musical experience.
+            </p>
+          </div>
+          <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Search</a></li>
+              <li><a href="#">Playlist</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+          <div class="footer-section contact">
+            <h2>Contact</h2>
+            <p>
+              Email: <a href="mailto:contact@mzyka.com">contact@mzyka.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">&copy; 2025 Mzyka. All rights reserved.</div>
+      </footer>
+    </section>
+
+    <script src="audioPlayer.js" defer></script>
+    <script src="Home/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedSettings = JSON.parse(
+          localStorage.getItem("#")
+        );
+        if (savedSettings && savedSettings.theme === "light") {
+          document.body.classList.add("lightmode");
+        }
+      });
+    </script>
+  </body>
+</html>

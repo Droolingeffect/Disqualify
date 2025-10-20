@@ -1,0 +1,146 @@
+:root {
+    --bg-color: #0e0006;
+    --second-bg-color: #100007;
+    --text-color: #ffffff;
+    --main-color: #fb4198;
+    --secondary-color: #fc97eb;
+    --accent-color: #6631f6;
+    --navbar-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .lightmode {
+    --bg-color: #ffffff;
+    --second-bg-color: #100007;
+    --text-color: #ff00bf;
+    --main-color: #fb4198;
+    --secondary-color: #fc97eb;
+    --accent-color: #6631f6;
+    --navbar-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  html, body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+  }
+  
+  /* ✅ Add margin to offset sidebar */
+  .main-page {
+    padding: 2rem 1rem;
+  }
+  
+  .wave-background {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .wave-background h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .wave-background::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%230e0006" fill-opacity="1" d="M0,256L1440,128L1440,320L0,320Z"></path></svg>') no-repeat;
+    background-size: cover;
+  }
+  
+  .settings-wrapper {
+    width: calc(100% - 250px); /* use full space minus sidebar */
+    margin: 0 auto; /* center it horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+  
+  .settings-container {
+    background-color: var(--second-bg-color);
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 12px rgba(251, 65, 152, 0.3);
+  }
+  
+  h2 {
+    text-align: center;
+    color: var(--main-color);
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 18px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    color: #ccc;
+    font-weight: 500;
+  }
+  
+  select, input {
+    width: 100%;
+    padding: 12px;
+    background-color: #1c1c1c;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+  }
+  
+  select:focus, input:focus {
+    border-color: var(--main-color);
+    outline: none;
+  }
+  
+  button {
+    width: 100%;
+    padding: 14px;
+    background: var(--main-color);
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: var(--secondary-color);
+  }
+  
+  @media (max-width: 768px) {
+    .main-page {
+      margin-left: 0; /* Remove margin for mobile view */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .wave-background h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  
+  .page-title{
+    text-align: center;
+  }

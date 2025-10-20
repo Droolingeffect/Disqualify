@@ -1,0 +1,178 @@
+/* ====== VARIABLES ====== */
+:root {
+    --bg-color: #0e0006;
+    --second-bg-color: #100007;
+    --text-color: #ffffff;
+    --main-color: #fb4198;
+    --secondary-color: #fc97eb;
+    --accent-color: #6631f6;
+    --navbar-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.lightmode {
+  --bg-color: #ffffff;
+  --second-bg-color: #f0f0f0;
+  --text-color: #000000;
+  --navbar-color: #ffffff;
+}
+
+.header {
+  background-color: var(--navbar-color);
+  font-family: "Poppins", sans-serif;
+}
+
+/* ====== MAIN CONTENT ====== */
+.main-content {
+  margin-top: 80px;
+  padding: 20px;
+}
+
+/* ====== SEARCH ====== */
+.search-section {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.search-bar {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  position: relative;
+  min-width: 300px;
+  margin-bottom: 3rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.search-bar button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--main-color);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.results, .categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.result-card, .category-card {
+  border-radius: 12px;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.result-card:hover, .category-card:hover {
+  transform: scale(1.05);
+}
+
+.category-card.pink { background: #ff2d55 url('https://via.placeholder.com/200x100') center/cover no-repeat; }
+.category-card.blue { background: #5ac8fa url('https://via.placeholder.com/200x100') center/cover no-repeat; }
+.category-card.orange { background: #ff9500 url('https://via.placeholder.com/200x100') center/cover no-repeat; }
+.category-card.green { background: #34c759 url('https://via.placeholder.com/200x100') center/cover no-repeat; }
+.category-card.purple { background: #af52de url('https://via.placeholder.com/200x100') center/cover no-repeat; }
+.category-card.yellow { background: #ffd60a url('https://via.placeholder.com/200x100') center/cover no-repeat; }
+
+.result-card {
+  background: var(--navbar-color);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.no-results {
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ====== GENRE PAGE STYLES ====== */
+.genre-title {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  width: 85%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.song-card {
+  background-color: var(--second-bg-color);
+  padding: 1rem;
+  border-radius: 16px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid var(--accent-color);
+}
+
+.song-card:hover {
+  transform: scale(1.05);
+}
+
+.song-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.song-title {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.song-artist {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
