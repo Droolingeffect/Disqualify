@@ -140,6 +140,7 @@ section{
   
   /* Search Form */
 .search-form {
+    position: relative;
     display: flex;
     align-items: center;
     max-width: 600px;
@@ -147,8 +148,8 @@ section{
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #fff;
-  margin-right: 120px;
+    background-color: #ffffff;
+    margin-right: 120px;
 }
   
   .search-form input {
@@ -685,6 +686,7 @@ section{
       position: absolute;
       top: 68px;
       left: 0;
+      z-index: 999;
     }
   
     #menu-toggle:checked ~ .navbar {
