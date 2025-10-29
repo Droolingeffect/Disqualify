@@ -56,16 +56,15 @@ body.lightmode {
     padding: 0 2rem;
 }
   
-  .logo {
+ .logo {
     font-size: 3rem;
-    color: var(--main-color);
+    background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-  }
+}
   
   .logo:hover {
     transform: scale(1.1);
