@@ -1,5 +1,5 @@
 /* === Global Reset === */
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -139,10 +139,10 @@ section{
     display: flex;
     margin-left: 8.5%;
     margin-right: auto;
-    max-width: 600px;
+    max-width: 400px;
     width: 100%;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 25px;
     overflow: hidden;
     background-color: #ffffff;
     z-index: 1000;
@@ -203,7 +203,7 @@ section{
 }
 
 @media (max-width: 768px){
-    .navbar .search-form {
+    .navbar .search-form{
         max-width: 100%;
         margin: 0.5rem 0;
         order: -1; /*this moves search to the top in mobile view*/
@@ -337,26 +337,8 @@ section{
   transition: background 0.3s ease;
 }
 
-.view-option.active,
 .view-option:hover{
   background: var(--accent-teal);
-}
-
-/*discography slider arrows*/
-.slider-arrow{
-  background: transparent;
-  color: var(--accent-color);
-  border: none;
-  font-size: 2.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-}
-
-.slider-arrow:hover{
-  color: var(--accent-teal);
-  transform: scale(1.2);
-  text-shadow: 0 0 15px var(--accent-teal), 0 0 25px var(--accent-color);
 }
 
 .audio-player{
@@ -404,9 +386,26 @@ section{
   accent-color: var(--accent-teal);
 }
 
+.slider-arrow{
+  background: transparent;
+  color: var(--accent-color);
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+}
+
+/* Glow and enlarge effect on hover */
+.slider-arrow:hover{
+  color: var(--accent-teal);
+  transform: scale(1.2);
+  text-shadow: 0 0 15px var(--accent-teal), 0 0 25px var(--accent-color);
+}
+
 /*makes it responsive*/
 @media (max-width: 768px){
-  .header{
+  .header {
     position: static;
     width: 100%;
     flex-direction: row;
@@ -444,7 +443,7 @@ section{
 
   section{
     margin-left: 0;
-}
+  }
 
   .artist-profile{
     flex-direction: column;
