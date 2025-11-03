@@ -32,16 +32,16 @@
   </label>
 
       <!-- Nav container -->
-<nav class="navbar">
-  <div class="search-form">
-        <input type="text" placeholder="Search songs or artists..." />
-        <button type="submit">
+  <nav class="navbar">
+    <div class="search-form">
+        <input type="text" placeholder="Search songs or artists..." id="searchInputHeader"/>
+        <button onclick="search('searchInputHeader')">
             <i class="fa fa-search"></i>
         </button>
     </div>
   
-    <a href="#"><i class="fa fa-home"></i> Home</a>
-    <a href="#"><i class="fa fa-search"></i> Search</a>
+    <a href="homepage.html"><i class="fa fa-home"></i> Home</a>
+    <a href="search.html"><i class="fa fa-search"></i> Search</a>
     <a href="#"><i class="fa fa-folder"></i> Playlist</a>
     <a href="#"><i class="fa fa-cog"></i> Settings</a>
     <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
@@ -58,7 +58,7 @@
             id="searchInput"
             placeholder="Search songs, artists, albums..."
           />
-          <button onclick="handleSearch()">Search</button>
+          <button onclick="search('searchInput')">Search</button>
         </div>
 
         <div id="results" class="results"></div>
@@ -68,70 +68,371 @@
         </div>
 
         <div class="categories" id="genreFallback">
-          <div class="category-card pink" onclick="goToGenre('Pop')">Pop</div>
-          <div class="category-card blue" onclick="goToGenre('Hip-Hop')">
-            Hip-Hop
-          </div>
-          <div class="category-card orange" onclick="goToGenre('Country')">
-            Country
-          </div>
-          <div class="category-card green" onclick="goToGenre('Indie')">
-            Indie
-          </div>
-          <div class="category-card purple" onclick="goToGenre('R&B')">R&B</div>
-          <div class="category-card yellow" onclick="goToGenre('Charts')">
-            Charts
-          </div>
-          <div class="category-card pink" onclick="goToGenre('K-Pop')">
-            K-Pop
-          </div>
-          <div class="category-card blue" onclick="goToGenre('Alternative')">
-            Alternative
-          </div>
-          <div class="category-card orange" onclick="goToGenre('Sleep')">
-            Sleep
-          </div>
-          <div class="category-card green" onclick="goToGenre('Latin')">
-            Latin
-          </div>
+          <div class="category-card pop" onclick="showCategories('Pop')">Pop</div>
+          <div class="category-card hiphop" onclick="showCategories('Hip-Hop')">Hip-Hop</div>
+          <div class="category-card children" onclick="showCategories('Children')">Children</div>
+          <div class="category-card indie" onclick="showCategories('Indie')">Indie</div>
+          <div class="category-card rnb" onclick="showCategories('R&B')">R&B</div>
+          <div class="category-card rock" onclick="showCategories('Rock')">Rock</div>
+          <div class="category-card kpop" onclick="showCategories('K-Pop')">K-Pop</div>
+          <div class="category-card alternative" onclick="showCategories('Alternative')">Alternative</div>
+          <div class="category-card sleep" onclick="showCategories('Sleep')">Sleep</div>
+          <div class="category-card latin" onclick="showCategories('Latin')">Latin</div>
         </div>
+
+        <h2 style="margin-top:5rem">Top 20 Songs</h2>
+
+        <div class="table-responsive">
+        <table class="table table-scrollable">
+          <thead class="text-center">
+            <tr>
+              <th>Song name</th>
+              <th>Album</th>
+              <th>Artist</th>
+              <th>genre</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+
+          <tbody class="table-hover text-center" id="songTable">
+            <tr>
+              <td>thank u, next</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/arianagrande_thanku_next.png" alt="arianagrande-thanku-next" class="album-cover" />
+                thank u, next
+                </div>
+              </td>
+              <td>Ariana Grande</td>
+              <td>Pop</td>
+              <td>2019</td>
+            </tr>
+            
+            <tr>
+              <td>Cruel Summer</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/taylorswift_lover.png" alt="taylorswift-cruelsummer" class="album-cover" />
+                Lover
+                </div>
+              </td>
+              <td>Taylor Swift</td>
+              <td>Pop</td>
+              <td>2019</td>
+            </tr>
+
+            <tr>
+              <td>DtMF</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/badbunny_debi.png" alt="badbunny-dtmf" class="album-cover" />
+                Debí Tirar Más Fotos
+                </div>
+              </td>
+              <td>Bad Bunny</td>
+              <td>Latin</td>
+              <td>2025</td>
+            </tr>
+
+            <tr>
+              <td>Hot</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/lsrfm_hot.png" alt="lsrfm-hot" class="album-cover" />
+                Hot
+                </div>
+              </td>
+              <td>LE SSERAFIM</td>
+              <td>K-Pop</td>
+              <td>2025</td>
+            </tr>
+
+            <tr>
+              <td>Without Me</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/eminem_theeminemshow.png" alt="eminem-withoutme" class="album-cover" />
+                The Eminem Show
+                </div>
+              </td>
+              <td>Eminem</td>
+              <td>Hip-Hop</td>
+              <td>2002</td>
+            </tr>
+
+            <tr>
+              <td>Yet To Come</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/BTS_Proof.jpg" alt="bts-ytc" class="album-cover" />
+                Proof
+                </div>
+              </td>
+              <td>BTS</td>
+              <td>K-Pop</td>
+              <td>2023</td>
+            </tr>
+
+            <tr>
+              <td>Baby Shark</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/pinkfong_babyshark.png" alt="pinkfong-babyshark" class="album-cover" />
+                Pinkfong Animal Songs
+                </div>
+              </td>
+              <td>Pinkfong</td>
+              <td>Children</td>
+              <td>2017</td>
+            </tr>
+            
+            <tr>
+              <td>Kill Bill</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/sza_killbill.png" alt="sza-killbill" class="album-cover" />
+                SOS
+                </div>
+              </td>
+              <td>SZA</td>
+              <td>R&B</td>
+              <td>2022</td>
+            </tr>
+
+            <tr>
+              <td>I Wanna Be Yours</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/arcticmonkeys_am.png" alt="arcticmonkeys-iwannabeyours" class="album-cover" />
+                AM
+                </div>
+              </td>
+              <td>Arctic Monkeys</td>
+              <td>Indie</td>
+              <td>2013</td>
+            </tr>
+
+            <tr>
+              <td>Thunderstruck</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/acdc_therazorsedge.png" alt="acdc-thunderstruck" class="album-cover" />
+                The Razors Edge
+                </div>
+              </td>
+              <td>AC/DC</td>
+              <td>Rock</td>
+              <td>1990</td>
+            </tr>
+
+            <tr>
+              <td>Soft Promise</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/somniare_softpromise.png" alt="somniare-softpromise" class="album-cover" />
+                Soft Promise
+                </div>
+              </td>
+              <td>Somniare</td>
+              <td>Sleep</td>
+              <td>2025</td>
+            </tr>
+
+            <tr>
+              <td>Twinkle Twinkle Little Star</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/supersimplesongs.png" alt="sss-twinkle" class="album-cover" />
+                Twinkle Twinkle Little Star
+                </div>
+              </td>
+              <td>Super Simple Songs</td>
+              <td>Children</td>
+              <td>2017</td>
+            </tr>
+
+            <tr>
+              <td>Winters Sleep</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/escixv_wintersleep.png" alt="escixv-wintersleep" class="album-cover" />
+                Winters Sleep
+                </div>
+              </td>
+              <td>Escix V</td>
+              <td>Sleep</td>
+              <td>2024</td>
+            </tr>
+
+            <tr>
+              <td>Despacito</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/despacito.png" alt="luis-yankee-despacito" class="album-cover" />
+                Despacito (featuring Daddy Yankee)
+                </div>
+              </td>
+              <td>Luis Fonsi & Daddy Yankee</td>
+              <td>Latin</td>
+              <td>2017</td>
+            </tr>
+
+            <tr>
+              <td>Smells Like Teen Spirit</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/nirvana_nevermind.png" alt="nirvana-smellsliketeenspirit" class="album-cover" />
+                Nevermind
+                </div>
+              </td>
+              <td>Nirvana</td>
+              <td>Alternative</td>
+              <td>1991</td>
+            </tr>
+
+            <tr>
+              <td>Creep</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/radioheads_pablohoney.png" alt="radioheads-creep" class="album-cover" />
+                Pablo Honey
+                </div>
+              </td>
+              <td>Radioheads</td>
+              <td>Alternative</td>
+              <td>1993</td>
+            </tr>
+
+            <tr>
+              <td>Wonderwall</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/oasis_morningglory.png" alt="oasis-wonderwall" class="album-cover" />
+                (What's the Story) Morning Glory?
+                </div>
+              </td>
+              <td>Oasis</td>
+              <td>Indie</td>
+              <td>1995</td>
+            </tr>
+
+            <tr>
+              <td>Not Like Us</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/kendricklamar_notlikeus.png" alt="kendricklamar-notlikeus" class="album-cover" />
+                Not Like Us
+                </div>
+              </td>
+              <td>Kendrick Lamar</td>
+              <td>Hip-Hop</td>
+              <td>2024</td>
+            </tr>
+
+            <tr>
+              <td>Thinkin Bout You</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/frankocean_channelorange.png" alt="frankocean-thinkinboutyou" class="album-cover" />
+                channel ORANGE
+                </div>
+              </td>
+              <td>Frank Ocean</td>
+              <td>R&B</td>
+              <td>2012</td>
+            </tr>
+
+            <tr>
+              <td>Bohemian Rhapsody</td>
+              <td>
+                <div class="td-album">
+                <img src="images/album_cover/queen_bohemianrhapsody.png" alt="queen-bohemianehapsody" class="album-cover" />
+                Bohemian Rhapsody
+                </div>
+              </td>
+              <td>Queen</td>
+              <td>Rock</td>
+              <td>1975</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
       </section>
     </div>
 
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h2>About Disqualify</h2>
+            <p>
+              Disqualify is your favorite music streaming service, providing an immersive musical experience.
+            </p>
+          </div>
+          <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="search.html">Search</a></li>
+              <li><a href="#">Playlist</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+          <div class="footer-section contact">
+            <h2>Contact</h2>
+            <p>
+              Email: <a href="mailto:contact@disqualify.com">contact@disqualify.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">&copy; 2025 Disqualify. All rights reserved.</div>
+    </footer>
+
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      function showCategories() {
-        const searchValue = document.getElementById("searchInput").value.trim();
-        const categories = document.getElementById("categories");
-        if (searchValue !== "") {
-          categories.style.display = "grid";
-        } else {
-          categories.style.display = "none";
-          alert("Please type something to search!");
+      function search(search_field_id) {
+        var found, table, tr, td, i, j;
+        const searchValue = document.getElementById(search_field_id).value.trim().toLowerCase();
+        table = document.getElementById("songTable");
+        tr = table.getElementsByTagName("tr");
+       
+        for (i = 0; i < tr.length; i++) {
+          found = false;
+          td = tr[i].getElementsByTagName("td");
+          for (j = 0; j < td.length; j++) {
+            if (td[j].textContent.toLowerCase().includes(searchValue) || searchValue == "") {
+              found = true;
+            }
+          }
+          if (found) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
         }
       }
 
-      function goToGenre(genre) {
-        localStorage.setItem("selectedGenre", genre);
-        window.location.href = "genre.html";
-      }
-
-      function toggleTheme() {
-        document.body.classList.toggle("lightmode");
-        const theme = document.body.classList.contains("lightmode")
-          ? "light"
-          : "dark";
-        localStorage.setItem("myzykaSettings", JSON.stringify({ theme }));
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const savedSettings = JSON.parse(
-          localStorage.getItem("myzykaSettings")
-        );
-        if (savedSettings && savedSettings.theme === "light") {
-          document.body.classList.add("lightmode");
+      function showCategories(genre) {
+        var found, table, tr, td, i, j;
+        table = document.getElementById("songTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          found = false;
+          td = tr[i].getElementsByTagName("td");
+          for (j = 0; j < td.length; j++) {
+            if (td[j].textContent == genre) {
+              found = true;
+            }
+          }
+          if (found) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
         }
-      });
+      }
     </script>
   </body>
 </html>
