@@ -1,4 +1,3 @@
-
 /* === Global Reset === */
 * {
   margin: 0;
@@ -11,7 +10,7 @@
 }
 
 /*color theme that matches the home page*/
-:root {
+:root{
   --bg-color: #004d4d;
   --second-bg-color: #006666;
   --text-color: #b2fffd;
@@ -21,7 +20,7 @@
   --navbar-color: rgba(0, 77, 77, 0.9);
 }
 
-body.lightmode {
+body.lightmode{
   --bg-color: #f0fffe;
   --second-bg-color: #ffffff;
   --text-color: #008080;
@@ -31,16 +30,16 @@ body.lightmode {
   --navbar-color: rgba(240, 255, 254, 0.9);
 }
 
-  html {
+  html{
     overflow-x: hidden;
   }
   
-  body {
+  body{
     background-color: var(--bg-color);
     color: var(--text-color);
   }
 
-.header {
+.header{
 background-color: var(--navbar-color);
     color: var(--text-color);
     display: flex;
@@ -56,7 +55,7 @@ background-color: var(--navbar-color);
     padding: 0 2rem;
 }
 
-.logo {
+.logo{
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--accent-teal);
@@ -65,12 +64,12 @@ background-color: var(--navbar-color);
   transition: 0.3s ease;
 }
 
-.logo:hover {
+.logo:hover{
   color: var(--accent-orange);
   transform: scale(1.05);
 }
 
-.navbar {
+.navbar{
     display: flex;
     flex-direction: row;
     gap: 2rem;
@@ -79,7 +78,7 @@ background-color: var(--navbar-color);
     transition: all 0.3s ease;
 }
 
-.navbar a {
+.navbar a{
     display: inline-block;
     padding: 10px 15px;
     color: var(--text-color);
@@ -88,20 +87,20 @@ background-color: var(--navbar-color);
     border-radius: 5px;
 }
   
-  .navbar a.active {
+  .navbar a.active{
     background-color: var(--secondary-color);
   }
   
-.navbar a:hover {
+.navbar a:hover{
     background-color: var(--main-color);
     color: white;
 }
 
-#menu-toggle {
+#menu-toggle{
   display: none;
 }
 
-.menu-icon {
+.menu-icon{
   display: none;
   position: absolute;
   top: 25px;
@@ -114,7 +113,7 @@ background-color: var(--navbar-color);
 }
 
 /*main section*/
-section {
+section{
   margin-left: 70px;
   padding: 1.5rem;
   min-height: 100vh;
@@ -124,7 +123,7 @@ section {
     padding-top: 0;
   }
 
-.top-bar {
+.top-bar{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +134,7 @@ section {
   gap: 1rem;
 }
 
-.search-form {
+.search-form{
     position: relative;
     display: flex;
     margin-left: 8.5%;
@@ -149,7 +148,7 @@ section {
     z-index: 1000;
 }
 
-.search-form input {
+.search-form input{
   flex: 1;
   padding: 0.5rem;
   border: none;
@@ -157,7 +156,7 @@ section {
   color: #333;
 }
 
-.search-form button {
+.search-form button{
   background: var(--main-color);
   color: #fff;
   padding: 0.5rem 1rem;
@@ -166,11 +165,11 @@ section {
   transition: background-color 0.3s;
 }
 
-.search-form button:hover {
+.search-form button:hover{
   background-color: var(--secondary-color);
 }
 
-.navbar .search-form {
+.navbar .search-form{
     display: flex;
     align-items: center;
     max-width: 300px;
@@ -182,7 +181,7 @@ section {
     margin-right: 1rem;
 }
 
-.navbar .search-form input {
+.navbar .search-form input{
     flex: 1;
     padding: 0.5rem 1rem;
     border: none;
@@ -190,7 +189,7 @@ section {
     color: #333;
 }
 
-.navbar .search-form button {
+.navbar .search-form button{
     background-color: var(--main-color);
     color: #fff;
     padding: 0.5rem;
@@ -199,11 +198,11 @@ section {
     border-left: 1px solid #ccc;
 }
 
-.navbar .search-form button:hover {
+.navbar .search-form button:hover{
     background-color: var(--secondary-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
     .navbar .search-form {
         max-width: 100%;
         margin: 0.5rem 0;
@@ -211,24 +210,26 @@ section {
     }
 }
 
-.icons {
+.icons{
     display: flex;
-    right: 2rem;
+    position: fixed;
+    top: 70px;
+    left: 2rem;
     z-index: 1000;
 }
 
-.icons a {
+.icons a{
   color: var(--text-color);
-  margin-left: 5%;
+  margin-left: 0;
   font-size: 2rem;
   transition: 0.3s;
 }
 
-.icons a:hover {
+.icons a:hover{
   color: var(--accent-teal);
 }
 
-.artist-profile {
+.artist-profile{
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, var(--accent-color), var(--main-color));
@@ -239,12 +240,12 @@ section {
   margin-bottom: 2rem;
 }
 
-.artist-profile:hover {
+.artist-profile:hover{
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(26, 188, 156, 0.3), 0 0 35px rgba(243, 156, 18, 0.2);
 }
 
-.artist-image img {
+.artist-image img{
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -254,25 +255,25 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.artist-image img:hover {
+.artist-image img:hover{
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(26, 188, 156, 0.5);
 }
 
-.artist-info h1 {
+.artist-info h1{
   font-size: 2rem;
   margin-bottom: 0.5rem;
   color: var(--accent-teal);
 }
 
-.artist-bio {
+.artist-bio{
   font-size: 1rem;
   color: #cccccc;
   margin-top: 0.5rem;
   line-height: 1.5;
 }
 
-.follow-btn {
+.follow-btn{
   background: var(--accent-orange);
   color: #fff;
   padding: 0.5rem 1rem;
@@ -282,7 +283,7 @@ section {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.follow-btn:hover {
+.follow-btn:hover{
   background: var(--accent-teal);
   transform: translateY(-3px);
 }
@@ -290,7 +291,7 @@ section {
 /*card sections (albums, songs, discography)*/
 .latest-album-card,
 .popular-songs-card,
-.albums-slider {
+.albums-slider{
   background: linear-gradient(135deg, var(--accent-color), var(--main-color));
   padding: 1rem;
   border-radius: 12px;
@@ -301,34 +302,34 @@ section {
 
 .latest-album-card:hover,
 .popular-songs-card:hover,
-.albums-slider:hover {
+.albums-slider:hover{
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(26, 188, 156, 0.2), 0 0 35px rgba(243, 156, 18, 0.1);
 }
 
 .latest-album-card h2,
 .popular-songs-card h2,
-.albums-slider h2 {
+.albums-slider h2{
   text-align: center;
   color: var(--accent-orange);
   margin-bottom: 1rem;
 }
 
 .album-container,
-.songs-container {
+.songs-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
 }
 
 /*discography slider*/
-.view-options {
+.view-options{
   display: flex;
   gap: 1rem;
   justify-content: center;
 }
 
-.view-option {
+.view-option{
   background: rgba(255, 255, 255, 0.08);
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
@@ -337,11 +338,11 @@ section {
 }
 
 .view-option.active,
-.view-option:hover {
+.view-option:hover{
   background: var(--accent-teal);
 }
 
-.audio-player {
+.audio-player{
   background: var(--card-bg);
   border-radius: 12px;
   padding: 1rem;
@@ -350,11 +351,11 @@ section {
   transition: box-shadow 0.3s ease;
 }
 
-.audio-player:hover {
+.audio-player:hover{
   box-shadow: 0 0 20px rgba(26, 188, 156, 0.2);
 }
 
-.control-btn {
+.control-btn{
   background: none;
   color: var(--text-color);
   font-size: 1.5rem;
@@ -362,19 +363,19 @@ section {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.control-btn:hover {
+.control-btn:hover{
   color: var(--accent-orange);
   transform: scale(1.1);
 }
 
-.progress-track {
+.progress-track{
   height: 6px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
   position: relative;
 }
 
-.progress-fill {
+.progress-fill{
   background: linear-gradient(90deg, var(--accent-teal), var(--accent-orange));
   height: 100%;
   width: 0%;
@@ -382,13 +383,13 @@ section {
   transition: width 0.3s linear;
 }
 
-.volume-slider {
+.volume-slider{
   accent-color: var(--accent-teal);
 }
 
 /*makes it responsive*/
-@media (max-width: 768px) {
-  .header {
+@media (max-width: 768px){
+  .header{
     position: static;
     width: 100%;
     flex-direction: row;
@@ -396,11 +397,11 @@ section {
     padding: 10px;
   }
 
-  .menu-icon {
+  .menu-icon{
     display: block;
   }
 
-  .navbar {
+  .navbar{
     display: none;
     flex-direction: row;
     background-color: var(--navbar-color);
@@ -416,24 +417,30 @@ section {
     z-index: 999;
   }
 
-  #menu-toggle:checked ~ .navbar {
+  #menu-toggle:checked ~ .navbar{
     display: flex;
   }
 
-  #menu-toggle:checked ~ section .top-bar {
+  #menu-toggle:checked ~ section .top-bar{
   display: none;
 }
 
-  section {
+  section{
     margin-left: 0;
-  }
+}
 
-  .artist-profile {
+  .artist-profile{
     flex-direction: column;
     text-align: center;
   }
 
-  .artist-image img {
+  .artist-image img{
     margin-bottom: 1rem;
+  }
+  
+  .icons{
+    position: fixed;
+    top: 70px;
+    left: 1rem;
   }
 }
