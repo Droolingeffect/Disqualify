@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /* === Global Reset === */
 *{
   margin: 0;
@@ -461,6 +462,8 @@ section{
     left: 1rem;
   }
 =======
+=======
+>>>>>>> Stashed changes
 /* ===== ARTIST PROFILE ===== */
 .artist-profile {
     grid-column: 1 / -1;
@@ -1314,5 +1317,8 @@ section{
         font-size: 0.8rem;
     }
   
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
