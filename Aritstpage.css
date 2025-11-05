@@ -6,7 +6,7 @@
     text-decoration: none;
     border: none;
     outline: none;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .logo {
@@ -22,18 +22,17 @@ h1, h2, h3, h4, h5, h6 {
 
 
 }
-/*color theme that matches the home page*/
 :root {
     --bg-color: #004d4d;
     --second-bg-color: #006666;
     --text-color: #b2fffd;
-    --main-color: #00ffcc42;
+    --main-color: #00ffcc;
     --secondary-color: #ff6b6b;
     --accent-color: #ffd166;
     --navbar-color: rgba(0, 77, 77, 0.9);
-}
-
-body.lightmode {
+  }
+  
+  body.lightmode {
     --bg-color: #f0fffe;
     --second-bg-color: #ffffff;
     --text-color: #008080;
@@ -41,7 +40,7 @@ body.lightmode {
     --secondary-color: #ff6b6b;
     --accent-color: #ffd166;
     --navbar-color: rgba(240, 255, 254, 0.9);
-}
+  }
 
 html {
     overflow-x: hidden;

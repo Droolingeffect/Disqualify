@@ -1,0 +1,137 @@
+/* ---- AccountPage.css (scoped styles for the account page) ---- */
+:root{
+    /* uses your existing palette */
+    --bg-color: #0e0006;
+    --second-bg-color: #100007;
+    --text-color: #ffffff;
+    --main-color: #fb4198;
+    --secondary-color: #fc97eb;
+    --accent-color: #6631f6;
+  }
+  
+  /* make sure the header sits on top and content starts below it */
+  .header{
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.25);
+  }
+  
+  /* page canvas */
+  .account-page{
+    min-height: calc(100vh - 72px);
+    display: grid;
+    place-items: start center;
+    padding: 6rem 1.25rem 3rem;   /* space under the header */
+    background: radial-gradient(1200px 800px at 10% -10%,
+                rgba(251,65,152,.15), transparent 50%) ,
+                radial-gradient(1200px 800px at 100% 10%,
+                rgba(102,49,246,.12), transparent 45%);
+    color: var(--text-color);
+    font-family: "Poppins", system-ui, -apple-system, sans-serif;
+  }
+  
+  /* profile card */
+  .profile-card{
+    width: min(720px, 95vw);
+    padding: 2rem;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+  
+  /* image */
+  .profile-card .profile-pic{
+    width: 120px; height: 120px; object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  /* name + badge */
+  #display-username{
+    display: flex; align-items: center; gap: .6rem;
+    font-weight: 700; letter-spacing: .3px;
+    font-size: clamp(1.25rem, 2.2vw + .8rem, 1.75rem);
+    margin: 0 0 .25rem 0;
+  }
+  .status-btn{
+    padding: .2rem .55rem;
+    font-size: .75rem; line-height: 1;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    user-select: none;
+  }
+  .status-btn.free{
+    color: #d1d5db;
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.12);
+  }
+  .status-btn.paid{
+    color: #0b0b0f;
+    background: linear-gradient(90deg, var(--secondary-color), var(--main-color));
+    border-color: transparent;
+  }
+  
+  /* bio */
+  #display-bio{
+    margin: 0 0 1.25rem 0;
+    color: #e5e7eb;
+    opacity: .9;
+  }
+  
+  /* edit button */
+  .edit-btn{
+    cursor: pointer;
+    padding: .7rem 1.1rem;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+    color: white;
+    font-weight: 600;
+    letter-spacing: .2px;
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  }
+  .edit-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 20px rgba(0,0,0,.35); }
+  .edit-btn:active{ transform: translateY(0); opacity: .9; }
+  
+  /* navbar tweaks for this page only */
+  .header .logo{
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--secondary-color), var(--main-color));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    letter-spacing: .5px;
+  }
+  
+  /* responsive */
+  @media (max-width: 700px){
+    .profile-card{ padding: 1.25rem; }
+    .edit-btn{ width: 100%; }
+  }
+  
+  body.lightmode .account-page{
+    color: #0b0b0f;
+    background: radial-gradient(900px 700px at 0% -10%, rgba(251,65,152,.14), transparent 50%),
+                radial-gradient(900px 700px at 100% 0%, rgba(102,49,246,.12), transparent 40%),
+                #f4f6ff;
+  }
+  body.lightmode .profile-card{
+    background: #ffffff;
+    border-color: rgba(0,0,0,.06);
+    box-shadow: 0 10px 30px rgba(16,24,40,.08);
+  }
+  body.lightmode #display-bio{ color: #334155; }
+
+  .account-page{min-height:calc(100vh - 72px);display:grid;place-items:start center;padding:6rem 1.25rem 3rem;}
+.profile-card{width:min(720px,95vw);padding:2rem;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.profile-card .profile-pic{width:120px;height:120px;object-fit:cover;border-radius:50%;border:3px solid rgba(255,255,255,.15);box-shadow:0 6px 18px rgba(0,0,0,.35);display:block;margin-bottom:1rem}
+#display-username{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:clamp(1.25rem,2.2vw + .8rem,1.75rem);margin:0 0 .25rem}
+.status-btn{padding:.2rem .55rem;font-size:.75rem;border-radius:999px;border:1px solid transparent}
+.status-btn.free{color:#d1d5db;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12)}
+.status-btn.paid{color:#0b0b0f;background:linear-gradient(90deg,#fc97eb,#fb4198)}
+#display-bio{margin:0 0 1.25rem;color:#e5e7eb;opacity:.9}
+.edit-btn{cursor:pointer;padding:.7rem 1.1rem;border-radius:12px;background:linear-gradient(90deg,#fb4198,#6631f6);color:#fff;font-weight:600;border:none}
+.edit-btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(0,0,0,.35)}
+
+  
