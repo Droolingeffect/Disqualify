@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Page - Mzyka</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom Styles -->
+    <link rel="styleshhet" href="/accountpage.css"/>
+    <link rel="stylesheet" href="/HomeStyle.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <header class="header">
+      <a href="/homepage.html" class="logo">Disqualifyy</a>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon"
+        ><span class="fa fa-bars"></span
+      ></label>
+      <nav class="navbar">
+        <div class="navbar-top">
+          <a href=""><i class="fa fa-home"></i> Home</a>
+          <a href="/search.html"
+            ><i class="fa fa-search"></i> Search</a
+          >
+          <a href=""
+            ><i class="fa fa-folder"></i> Playlist</a
+          >
+        </div>
+        <div class="navbar-bottom">
+          <a href="/settings.html"
+            ><i class="fa fa-cog"></i> Settings</a
+          >
+          <a href=""
+            ><i class="fa fa-sign-out"></i> Logout</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section class="account-page">
+      <div class="profile-card">
+        <img
+          src="/images/album_cover/arcticmonkeys_am.png"
+          alt="Profile Picture"
+          class="profile-pic"
+          style="width: 120px; height: 120px"
+        />
+        <h2 id="display-username">
+          Username
+        </h2>
+        <p id="display-bio">This is your bio...</p>
+        <a href=""
+          ><button class="edit-btn">Edit Profile</button></a
+        >
+      </div>
+    </section>
+
+    <!-- Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedSettings = JSON.parse(
+          localStorage.getItem("myzykaSettings")
+        );
+        if (savedSettings && savedSettings.theme === "light") {
+          document.body.classList.add("lightmode");
+        }
+
+        const userData = JSON.parse(localStorage.getItem("myzykaUser"));
+        const profileData = JSON.parse(localStorage.getItem("myzykaProfile"));
+
+        if (profileData) {
+          document.getElementById("display-username").childNodes[0].nodeValue =
+            profileData.username || userData.username;
+          document.getElementById("display-bio").textContent =
+            profileData.bio || "This is your bio...";
+          if (profileData.profilePic) {
+            document.querySelector(".profile-pic").src = profileData.profilePic;
+          }
+        } else if (userData) {
+          document.getElementById("display-username").childNodes[0].nodeValue =
+            userData.username;
+          document.getElementById(
+            "display-bio"
+          ).textContent = `${userData.firstName} ${userData.lastName}`;
+        }
+
+        // Set Paid / Free Status (Example Logic)
+        const statusBadge = document.getElementById("statusBadge");
+        const isPaidUser = userData.isPaid || false; // Assuming you store this on registration
+
+        if (isPaidUser) {
+          statusBadge.textContent = "Premium";
+          statusBadge.classList.remove("free");
+          statusBadge.classList.add("paid");
+        } else {
+          statusBadge.textContent = "Free";
+          statusBadge.classList.remove("paid");
+          statusBadge.classList.add("free");
+        }
+      });
+
+      function logout() {
+        localStorage.removeItem("isLoggedIn");
+        alert("Logged out!");
+        window.location.href = "/MzykaWeb/Login/login.html";
+      }
+    </script>
+  </body>
+</html>
