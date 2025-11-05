@@ -1,118 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Account Page - Mzyka</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Custom Styles -->
-    <link rel="styleshhet" href="/accountpage.css"/>
-    <link rel="stylesheet" href="/HomeStyle.css" />
-  </head>
-  <body>
-    <!-- Sidebar -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Disqualifyy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .navbar a {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /*Theme colors Tropical */
+        :root {
+          --bg-color: #004d4d;
+          --second-bg-color: #006666;
+          --text-color: #b2fffd;
+          --main-color: #00ffcc;
+          --secondary-color: #ff6b6b;
+          --accent-color: #ffd166;
+          --navbar-color: rgba(0, 77, 77, 0.9);
+        }
+
+        body.lightmode {
+          --bg-color: #f0fffe;
+          --second-bg-color: #ffffff;
+          --text-color: #008080;
+          --main-color: #00ffcc;
+          --secondary-color: #ff6b6b;
+          --accent-color: #ffd166;
+          --navbar-color: rgba(240, 255, 254, 0.9);
+        }
+
+        /* Body */
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Sidebar/Header */
+        .header {
+            background-color: var(--navbar-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 70px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 3rem;
+            background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .navbar a {
+            display: inline-block;
+            padding: 10px 15px;
+            color: var(--text-color);
+            transition: 0.3s;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+
+        .navbar a.active {
+            background-color: var(--secondary-color);
+        }
+
+        .navbar a:hover {
+            background-color: var(--main-color);
+            color: white;
+        }
+
+        .header i {
+            margin-right: 12px;
+        }
+
+        /* Hamburger Menu */
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            position: absolute;
+            top: 25px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--main-color);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        section {
+            margin-top: 70px;
+            padding: 1.5rem;
+            min-height: 100vh;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header {
+                position: static;
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .main-page {
+                margin-left: 0;
+                padding-top: 0.3rem;
+            }
+
+            .navbar {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--navbar-color);
+                padding: 10px;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                z-index: 999;
+            }
+
+            #menu-toggle:checked ~ .navbar {
+                display: flex;
+            }
+
+            .navbar a {
+                border: none;
+                border-bottom: 1px solid #444;
+            }
+        }
+    </style>
+    <!-- Account Page Styles -->
+    <link rel="stylesheet" href="accountpage.css">
+</head>
+<body>
+    <!-- Sidebar / Header -->
     <header class="header">
-      <a href="/homepage.html" class="logo">Disqualifyy</a>
-      <input type="checkbox" id="menu-toggle" />
-      <label for="menu-toggle" class="menu-icon"
-        ><span class="fa fa-bars"></span
-      ></label>
-      <nav class="navbar">
-        <div class="navbar-top">
-          <a href=""><i class="fa fa-home"></i> Home</a>
-          <a href="/search.html"
-            ><i class="fa fa-search"></i> Search</a
-          >
-          <a href=""
-            ><i class="fa fa-folder"></i> Playlist</a
-          >
-        </div>
-        <div class="navbar-bottom">
-          <a href="/settings.html"
-            ><i class="fa fa-cog"></i> Settings</a
-          >
-          <a href=""
-            ><i class="fa fa-sign-out"></i> Logout</a
-          >
-        </div>
-      </nav>
+        <a href="/homepage.html" class="logo">Disqualifyy</a>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon"><span class="fa fa-bars"></span></label>
+        <nav class="navbar">
+            <a href=""><i class="fa fa-home"></i> Home</a>
+            <a href="/search.html"><i class="fa fa-search"></i> Search</a>
+            <a href=""><i class="fa fa-folder"></i> Playlist</a>
+            <a href="/settings.html"><i class="fa fa-cog"></i> Settings</a>
+            <a href="" onclick="logout()"><i class="fa fa-sign-out"></i> Logout</a>
+        </nav>
     </header>
 
     <!-- Main Content -->
     <section class="account-page">
-      <div class="profile-card">
-        <img
-          src="/images/album_cover/arcticmonkeys_am.png"
-          alt="Profile Picture"
-          class="profile-pic"
-          style="width: 120px; height: 120px"
-        />
-        <h2 id="display-username">
-          Username
-        </h2>
-        <p id="display-bio">This is your bio...</p>
-        <a href=""
-          ><button class="edit-btn">Edit Profile</button></a
-        >
-      </div>
+        <div class="account-container">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                         alt="Profile Picture" id="profile-pic">
+                    <button class="edit-avatar-btn"><i class="fa fa-camera"></i></button>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-badge" id="statusBadge">Premium</div>
+                    <h1 id="display-username">Username</h1>
+                    <p id="display-bio">This is your bio...</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">24</span>
+                            <span class="stat-label">Playlists</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1.2K</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">356</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="getCode()">
+                    <i class="fa fa-code"></i> Get a code
+                </button>
+                <button class="btn btn-secondary" onclick="editProfile()">
+                    <i class="fa fa-edit"></i> Edit Profile
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fa fa-share-alt"></i> Share Profile
+                </button>
+            </div>
+
+            <!-- Content Tabs -->
+            <div class="content-tabs">
+                <button class="tab-btn active" data-tab="playlists">Playlists</button>
+                <button class="tab-btn" data-tab="liked">Liked Songs</button>
+                <button class="tab-btn" data-tab="recent">Recently Played</button>
+                <button class="tab-btn" data-tab="following">Following</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Playlists Tab -->
+                <div class="tab-pane active" id="playlists">
+                    <div class="playlists-grid">
+                        <!-- Playlist Card 1 -->
+                        <div class="playlist-card">
+                            <div class="playlist-cover">
+                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                     alt="Playlist Cover">
+                                <div class="playlist-overlay">
+                                    <button class="play-btn"><i class="fa fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="playlist-info">
+                                <h3 class="playlist-title">Chill Vibes</h3>
+                                <p class="playlist-details">24 songs • 1.5 hours</p>
+                            </div>
+                        </div>
+
+                        <!-- Playlist Card 2 -->
+                        <div class="playlist-card">
+                            <div class="playlist-cover">
+                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                     alt="Playlist Cover">
+                                <div class="playlist-overlay">
+                                    <button class="play-btn"><i class="fa fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="playlist-info">
+                                <h3 class="playlist-title">Workout Mix</h3>
+                                <p class="playlist-details">18 songs • 1.2 hours</p>
+                            </div>
+                        </div>
+
+                        <!-- Playlist Card 3 -->
+                        <div class="playlist-card">
+                            <div class="playlist-cover">
+                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                     alt="Playlist Cover">
+                                <div class="playlist-overlay">
+                                    <button class="play-btn"><i class="fa fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="playlist-info">
+                                <h3 class="playlist-title">Focus Flow</h3>
+                                <p class="playlist-details">32 songs • 2 hours</p>
+                            </div>
+                        </div>
+
+                        <!-- Playlist Card 4 -->
+                        <div class="playlist-card">
+                            <div class="playlist-cover">
+                                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                     alt="Playlist Cover">
+                                <div class="playlist-overlay">
+                                    <button class="play-btn"><i class="fa fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="playlist-info">
+                                <h3 class="playlist-title">Road Trip</h3>
+                                <p class="playlist-details">45 songs • 3 hours</p>
+                            </div>
+                        </div>
+
+                        <!-- Create New Playlist Card -->
+                        <div class="playlist-card create-new">
+                            <div class="create-playlist-icon">
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <div class="playlist-info">
+                                <h3 class="playlist-title">Create Playlist</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other tabs would go here -->
+                <div class="tab-pane" id="liked">
+                    <p class="tab-placeholder">Your liked songs will appear here</p>
+                </div>
+                <div class="tab-pane" id="recent">
+                    <p class="tab-placeholder">Your recently played tracks will appear here</p>
+                </div>
+                <div class="tab-pane" id="following">
+                    <p class="tab-placeholder">Artists and users you follow will appear here</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Script -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const savedSettings = JSON.parse(
-          localStorage.getItem("myzykaSettings")
-        );
-        if (savedSettings && savedSettings.theme === "light") {
-          document.body.classList.add("lightmode");
+        // Simulate loading user data from localStorage
+        document.addEventListener("DOMContentLoaded", function() {
+            // In a real app, you would get this from localStorage
+            const userData = {
+                username: "MusicLover42",
+                bio: "Music enthusiast exploring all genres. Always looking for new artists to discover!",
+                profilePic: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                isPaid: true
+            };
+            
+            // Update the UI with user data
+            document.getElementById("display-username").textContent = userData.username;
+            document.getElementById("display-bio").textContent = userData.bio;
+            document.getElementById("profile-pic").src = userData.profilePic;
+            
+            // Set Paid / Free Status
+            const statusBadge = document.getElementById("statusBadge");
+            if (userData.isPaid) {
+                statusBadge.textContent = "Premium";
+                statusBadge.classList.remove("free");
+                statusBadge.classList.add("paid");
+            } else {
+                statusBadge.textContent = "Free";
+                statusBadge.classList.remove("paid");
+                statusBadge.classList.add("free");
+            }
+
+            // Tab functionality
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons and panes
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    // Show corresponding tab pane
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+        
+        function getCode() {
+            alert("Your unique code: DQ-" + Math.random().toString(36).substr(2, 9).toUpperCase());
         }
-
-        const userData = JSON.parse(localStorage.getItem("myzykaUser"));
-        const profileData = JSON.parse(localStorage.getItem("myzykaProfile"));
-
-        if (profileData) {
-          document.getElementById("display-username").childNodes[0].nodeValue =
-            profileData.username || userData.username;
-          document.getElementById("display-bio").textContent =
-            profileData.bio || "This is your bio...";
-          if (profileData.profilePic) {
-            document.querySelector(".profile-pic").src = profileData.profilePic;
-          }
-        } else if (userData) {
-          document.getElementById("display-username").childNodes[0].nodeValue =
-            userData.username;
-          document.getElementById(
-            "display-bio"
-          ).textContent = `${userData.firstName} ${userData.lastName}`;
+        
+        function editProfile() {
+            alert("Edit profile feature would open here");
         }
-
-        // Set Paid / Free Status (Example Logic)
-        const statusBadge = document.getElementById("statusBadge");
-        const isPaidUser = userData.isPaid || false; // Assuming you store this on registration
-
-        if (isPaidUser) {
-          statusBadge.textContent = "Premium";
-          statusBadge.classList.remove("free");
-          statusBadge.classList.add("paid");
-        } else {
-          statusBadge.textContent = "Free";
-          statusBadge.classList.remove("paid");
-          statusBadge.classList.add("free");
+        
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            alert("Logged out!");
+            window.location.href = "/MzykaWeb/Login/login.html";
         }
-      });
-
-      function logout() {
-        localStorage.removeItem("isLoggedIn");
-        alert("Logged out!");
-        window.location.href = "/MzykaWeb/Login/login.html";
-      }
     </script>
-  </body>
+</body>
 </html>
