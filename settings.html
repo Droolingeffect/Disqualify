@@ -39,39 +39,57 @@
   <section class="main-page">
       <h1 class="page-title">Myzyka Settings</h1>
     
-
+<!--modified this section-->
     <section class="settings-wrapper">
-      <div class="settings-container">
-        <h2>Customize Experience</h2>
-        <form id="settings-form">
-          <div class="form-group">
-            <label for="theme">Theme</label>
-            <select id="theme" name="theme">
-              <option value="dark">Dark</option>
-              <option value="light">Light</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="notifications">Notifications</label>
-            <select id="notifications" name="notifications">
-              <option value="enabled">Enabled</option>
-              <option value="disabled">Disabled</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="privacy">Privacy Settings</label>
-            <select id="privacy" name="privacy">
-              <option value="public">Public</option>
-              <option value="private">Private</option>
-            </select>
-          </div>
-
-          <button type="submit">Save Changes</button>
-        </form>
+  <div class="settings-container">
+    <h2>Customize Experience</h2>
+    
+    <!-- Added success message -->
+    <div class="success-message" id="success-message">
+      Settings saved successfully!
+    </div>
+    
+    <form id="settings-form">
+      <div class="settings-section">
+        <div class="form-group">
+          <label for="theme">Theme</label>
+          <select id="theme" name="theme" aria-describedby="theme-help">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+          </select>
+          <small id="theme-help" class="help-text">Choose your preferred color theme</small>
+        </div>
       </div>
-    </section>
+
+      <div class="settings-section">
+        <div class="form-group">
+          <label for="notifications">Notifications</label>
+          <select id="notifications" name="notifications" aria-describedby="notifications-help">
+            <option value="enabled">Enabled</option>
+            <option value="disabled">Disabled</option>
+          </select>
+          <small id="notifications-help" class="help-text">Control notification preferences</small>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <div class="form-group">
+          <label for="privacy">Privacy Settings</label>
+          <select id="privacy" name="privacy" aria-describedby="privacy-help">
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+          </select>
+          <small id="privacy-help" class="help-text">Set your profile visibility</small>
+        </div>
+      </div>
+
+      <button type="submit" id="save-button">
+        <span class="button-text">Save Changes</span>
+        <span class="loading-spinner" style="display: none;">Saving...</span>
+      </button>
+    </form>
+  </div>
+</section>
 
     <footer class="footer">
   <div class="footer-content">
