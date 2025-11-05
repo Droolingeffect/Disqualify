@@ -524,17 +524,44 @@ section{
   }
   
   /* Unique Play Button */
-  .quick-picks-play-btn {
+
+.quick-picks-play-btn {
+    background: transparent !important;
     font-size: 1.2rem;
     color: var(--text-color);
     cursor: pointer;
-    transition: color 0.3s;
+    transition: all 0.3s;
     align-self: flex-end;
-  }
-  
-  .quick-picks-play-btn:hover {
-    color: var(--secondary-color);
-  }
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.quick-picks-play-btn:hover {
+    color: var(--main-color);
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: scale(1.1);
+}
+
+.song-play-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.song-play-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--main-color);
+}
+
+
+
   
   /* Responsive Adjustments */
   @media (max-width: 1024px) {
