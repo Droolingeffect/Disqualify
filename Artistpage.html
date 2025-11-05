@@ -1,209 +1,1183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artist Page - Disqualify</title>
-    <link rel="stylesheet" href="Aritstpage.css" />
-    <link rel="stylesheet" href="HomeStyle.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album - Disqualifyy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .navbar a {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Theme colors Tropical */
+        :root {
+          --bg-color: #004d4d;
+          --second-bg-color: #006666;
+          --text-color: #b2fffd;
+          --main-color: #00ffcc;
+          --secondary-color: #ff6b6b;
+          --accent-color: #ffd166;
+          --navbar-color: rgba(0, 77, 77, 0.9);
+        }
+
+        body.lightmode {
+          --bg-color: #f0fffe;
+          --second-bg-color: #ffffff;
+          --text-color: #008080;
+          --main-color: #00ffcc;
+          --secondary-color: #ff6b6b;
+          --accent-color: #ffd166;
+          --navbar-color: rgba(240, 255, 254, 0.9);
+        }
+
+        /* Body */
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--navbar-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 70px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 3rem;
+            background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .navbar a {
+            display: inline-block;
+            padding: 10px 15px;
+            color: var(--text-color);
+            transition: 0.3s;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+
+        .navbar a.active {
+            background-color: var(--secondary-color);
+        }
+
+        .navbar a:hover {
+            background-color: var(--main-color);
+            color: white;
+        }
+
+        .header i {
+            margin-right: 12px;
+        }
+
+        /* Hamburger Menu */
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            position: absolute;
+            top: 25px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--main-color);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        section {
+            margin-top: 70px;
+            padding: 1.5rem;
+            min-height: calc(100vh - 70px);
+            flex: 1;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
+
+        /* Search Form */
+        .search-form {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 25px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .search-form input {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            font-size: 1rem;
+            color: var(--text-color);
+            background: transparent;
+        }
+
+        .search-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .search-form button {
+            background-color: var(--main-color);
+            color: var(--bg-color);
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        .search-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Icons */
+        .icons a {
+            color: var(--text-color);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .icons a:hover {
+            color: var(--main-color);
+        }
+
+        /* Cards Layout */
+        .cards {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 2rem;
+        }
+
+        /* Album Header Card */
+        .album-header {
+            background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+            border-radius: 16px;
+            padding: 2rem;
+            color: var(--text-color);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .album-artwork {
+            flex-shrink: 0;
+        }
+
+        .album-artwork img {
+            width: 250px;
+            height: 250px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .album-info {
+            flex: 1;
+        }
+
+        .album-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, var(--text-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .artist-link {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            transition: color 0.3s;
+        }
+
+        .artist-link:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .album-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .album-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .play-btn, .shuffle-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+        }
+
+        .play-btn {
+            background: var(--main-color);
+            color: var(--bg-color);
+        }
+
+        .play-btn:hover {
+            background: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        .shuffle-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .shuffle-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Track List Card */
+        .track-list-card {
+            background: linear-gradient(135deg, var(--second-bg-color), var(--bg-color));
+            border-radius: 16px;
+            padding: 1.5rem;
+            color: var(--text-color);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .track-list-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--text-color), var(--main-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tracks-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .track-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .track-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .track-item.playing {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--main-color);
+        }
+
+        .track-number {
+            width: 30px;
+            text-align: center;
+            margin-right: 1rem;
+            font-weight: 500;
+        }
+
+        .track-info {
+            flex: 1;
+        }
+
+        .track-title {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .track-artist {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .track-duration {
+            margin-left: auto;
+            margin-right: 1rem;
+            opacity: 0.8;
+        }
+
+        .track-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .track-action-btn {
+            background: transparent;
+            color: var(--text-color);
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .track-action-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--main-color);
+        }
+
+        /* Discography Section */
+        .albums-slider {
+            background: linear-gradient(135deg, var(--second-bg-color), var(--bg-color));
+            border-radius: 16px;
+            padding: 1.5rem;
+            color: var(--text-color);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .slider-header h2 {
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, var(--text-color), var(--main-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .view-options {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.25rem;
+        }
+
+        .view-option {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .view-option.active {
+            background: var(--main-color);
+            color: var(--bg-color);
+        }
+
+        .view-option:not(.active):hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .slider-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .slider-arrow {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .slider-arrow:hover {
+            background: var(--main-color);
+            color: var(--bg-color);
+            transform: scale(1.1);
+        }
+
+        .slider-track-container {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 0.5rem 0.25rem 1rem 0.25rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--main-color) rgba(255, 255, 255, 0.1);
+        }
+
+        .slider-track::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .slider-track::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .slider-track::-webkit-scrollbar-thumb {
+            background-color: var(--main-color);
+            border-radius: 4px;
+        }
+
+        .album-card {
+            flex: 0 0 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .album-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .album-card img {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .album-card h3 {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .album-card p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Audio Player */
+        .audio-player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--second-bg-color);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            z-index: 10000;
+            border-top: 2px solid var(--main-color);
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+        }
+
+        .player-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .player-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 200px;
+        }
+
+        .player-album-art {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .player-album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .track-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .track-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .track-artist {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+        }
+
+        .player-controls {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            max-width: 600px;
+        }
+
+        .progress-bar {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .progress-bar:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .progress-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .progress-fill {
+            background: var(--main-color);
+            height: 100%;
+            width: 0%;
+            border-radius: 3px;
+            transition: width 0.15s ease;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .progress-thumb {
+            background: white;
+            border: 2px solid transparent;
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            transform: translate(-50%, -50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            transition: background 0.3s ease, border-color 0.3s ease, left 0.15s ease;
+            pointer-events: none;
+        }
+
+        .progress-bar:hover .progress-thumb {
+            background: var(--main-color);
+        }
+
+        .player-time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+        }
+
+        .control-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .control-btn:hover {
+            color: var(--main-color);
+            transform: scale(1.1);
+        }
+
+        .control-btn.active {
+            color: var(--main-color) !important;
+            animation: pulse 1.5s infinite;
+            text-shadow: 0 0 10px var(--main-color);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .liked i {
+            color: var(--main-color);
+            text-shadow: 0 0 10px var(--main-color);
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: auto;
+            padding-right: 1rem;
+        }
+
+        .volume-slider {
+            -webkit-appearance: none;
+            width: 100px;
+            height: 6px;
+            background: linear-gradient( var(--main-color) 50%);
+            background-size: 100% 100%;
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            background: white;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            margin-top: -4px; 
+            cursor: pointer;
+            transition: background 0.3s ease, border-color 0.3s ease;
+            position: relative;
+        }
+
+        .volume-slider:hover::-webkit-slider-thumb {
+            background: var(--main-color);
+        }
+
+        #mute-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        #mute-btn:hover {
+            color: var(--main-color);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--second-bg-color);
+            color: var(--text-color);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .footer .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 1rem;
+        }
+
+        .footer .footer-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--main-color);
+        }
+
+        .footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer .footer-section ul li {
+            margin: 0.5rem 0;
+        }
+
+        .footer .footer-section ul li a {
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .footer .footer-section ul li a:hover {
+            color: var(--main-color);
+        }
+
+        .footer .footer-section p a {
+            color: var(--text-color);
+            text-decoration: underline;
+        }
+
+        .footer .footer-section.links ul {
+            display: grid;
+            align-content: center;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.2rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header {
+                position: static;
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--navbar-color);
+                padding: 10px;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                z-index: 999;
+            }
+
+            #menu-toggle:checked ~ .navbar {
+                display: flex;
+            }
+
+            .navbar a {
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .search-form {
+                max-width: 100%;
+            }
+
+            .album-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .album-artwork img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .album-title {
+                font-size: 2rem;
+            }
+
+            .slider-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .album-card {
+                flex: 0 0 150px;
+            }
+
+            .footer .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .audio-player {
+                left: 0;
+                width: 100%;
+            }
+
+            .player-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .player-info {
+                min-width: auto;
+            }
+
+            .volume-control {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .album-artwork img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .album-title {
+                font-size: 1.5rem;
+            }
+
+            .album-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .album-actions {
+                flex-direction: column;
+            }
+
+            .album-card {
+                flex: 0 0 120px;
+            }
+        }
+    </style>
+</head>
+<body>
     <header class="header">
-      <!-- logo -->
-      <a href="/homepage.html" class="logo">Disqualifyy</a>
+        <a href="/homepage.html" class="logo">Disqualifyy</a>
 
-      <!-- checkbox for the burger toggle (hidden) -->
-      <input type="checkbox" id="menu-toggle" />
-
-      <!-- label that acts as the "hamburger" icon -->
-      <label for="menu-toggle" class="menu-icon">
-        <span class="fa fa-bars"></span>
-      </label>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+            <span class="fa fa-bars"></span>
+        </label>
 
         <nav class="navbar">
-          <div class="navbar-top">
-            <a href="homepage.html"><i class="fa fa-home"></i> Home</a>
-            <a href="search.html"><i class="fa fa-search"></i> Search</a>
-            <a href="/MzykaWeb/Library/Library.html"><i class="fa fa-folder"></i> Playlist</a>
-          </div>
-          <div class="navbar-bottom">
-            <a href="/settings.html"><i class="fa fa-cog"></i> Settings</a>
-            <a href="/accountpage.html"><i class="fa fa-user-circle"></i> Account</a>
-            
-            <a href="/MzykaWeb/Login/logout.html"><i class="fa fa-sign-out"></i> Logout</a>
-          </div>
+            <div class="navbar-top">
+                <a href="/homepage.html"><i class="fa fa-home"></i> Home</a>
+                <a href="/search.html"><i class="fa fa-search"></i> Search</a>
+                <a href="/playlist.html"><i class="fa fa-folder"></i> Playlist</a>
+            </div>
+            <div class="navbar-bottom">
+                <a href="/settings.html"><i class="fa fa-cog"></i> Settings</a>
+                <a href="/accountpage.css"><i class="fa fa-user-circle"></i> Account</a>
+                <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
+            </div>
         </nav>
-      </header>
+    </header>
 
     <section class="main-page">
-      <div class="top-bar">
-        <form class="search-form">
-          <input type="text" placeholder="Search songs or artists..." />
-          <button type="submit">Search</button>
-        </form>
-        <div class="icons">
-          <a href="/MzykaWeb/Accountpage/accountpage.html"
-            ><i class="fa fa-user-circle"></i
-          ></a>
-        </div>
-      </div>
-
-      <div class="cards">
-      
-        <!-- artist profile section -->
-        <div class="artist-profile">
-          <div class="artist-image">
-            <img id="artist-img" alt="Artist Image" src="images/genres/hiphop_genre.jpg"/>
-          </div>
-          <div class="artist-info">
-            <h1 class="artist-name" id="artist-name"></h1>
-            <div class="artist-stats" id="artist-stats"></div>
-            <p class="artist-bio" id="artist-bio"></p>
-            <div class="artist-actions">
-              <button class="btn follow-btn">
-                <i class="fa fa-plus"></i> Follow
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- latest album section -->
-        <div class="latest-album-card">
-          <h2 class="title-albums">Latest Album</h2>
-          <div class="album-container" id="latest-album-container"></div>
-        </div>
-
-        <!-- popular songs section -->
-        <div class="popular-songs-card">
-          <h2>Popular Songs</h2>
-          <div class="songs-container" id="songs-container"></div>
-        </div>
-
-        <!-- discography section -->
-        <div class="albums-slider">
-          <div class="slider-header">
-            <h2>Discography</h2>
-            <div class="view-options">
-              <div class="view-option active" data-view="all">All</div>
-              <div class="view-option" data-view="album">Albums</div>
-              <div class="view-option" data-view="single">Singles</div>
-            </div>
-          </div>
-          <div class="slider-wrapper">
-            <button class="slider-arrow left-arrow">&#10094;</button>
-            <div class="slider-track-container">
-              <div class="slider-track" id="discography-container"></div>
-            </div>
-            <button class="slider-arrow right-arrow">&#10095;</button>
-          </div>
-        </div>
-
-        <audio id="audio-element" style="display: none">
-          <source src="" type="audio/mpeg" />
-        </audio>
-
-        <div class="audio-player" id="audio-player" style="display: none">
-          <div class="player-content">
-            <div class="player-info">
-              <div class="player-album-art">
-                <img id="current-track-art" alt="Album Art" />
-              </div>
-              <div class="track-info">
-                <div class="track-title" id="current-track-title"></div>
-                <div class="track-artist" id="current-track-artist"></div>
-              </div>
-            </div>
-
-            <div class="player-controls">
-              <div class="control-buttons">
-                <button class="control-btn" id="shuffle-btn">
-                  <i class="fa fa-random"></i>
-                </button>
-                <button class="control-btn" id="prev-btn">
-                  <i class="fa fa-step-backward"></i>
-                </button>
-                <button class="control-btn" id="play-pause-btn">
-                  <i class="fa fa-play"></i>
-                </button>
-                <button class="control-btn" id="next-btn">
-                  <i class="fa fa-step-forward"></i>
-                </button>
-                <button class="control-btn" id="like-btn">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-              </div>
-              <div class="progress-bar" id="progress-bar">
-                <div class="progress-track">
-                  <div class="progress-fill" id="progress"></div>
-                  <div class="progress-thumb" id="progress-thumb"></div>
+       
+        <div class="cards">
+            <!-- Album Header Section -->
+            <div class="album-header">
+                <div class="album-artwork">
+                    <img id="album-img" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Album Cover">
                 </div>
-              </div>
-              <div class="player-time">
-                <span id="current-time">0:00</span>
-                <span id="duration">0:00</span>
-              </div>
+                <div class="album-info">
+                    <h1 class="album-title" id="album-title">Midnight Dreams</h1>
+                    <a href="artist.html" class="artist-link" id="artist-link">By Luna Shadows</a>
+                    <div class="album-stats" id="album-stats">
+                        <span>12 tracks • 2024 • 45 min</span>
+                    </div>
+                    <div class="album-actions">
+                        <button class="play-btn"><i class="fa fa-play"></i> Play</button>
+                        <button class="shuffle-btn"><i class="fa fa-random"></i> Shuffle</button>
+                    </div>
+                </div>
+            </div>    
+            
+            <!-- Track List Section -->
+            <div class="track-list-card">
+                <h2>Track List</h2>
+                <div class="tracks-container" id="tracks-container">
+                    <div class="track-item">
+                        <div class="track-number">1</div>
+                        <div class="track-info">
+                            <div class="track-title">Midnight Drive</div>
+                            <div class="track-artist">Luna Shadows</div>
+                        </div>
+                        <div class="track-duration">3:45</div>
+                        <div class="track-actions">
+                            <button class="track-action-btn"><i class="fa fa-heart-o"></i></button>
+                            <button class="track-action-btn"><i class="fa fa-ellipsis-h"></i></button>
+                        </div>
+                    </div>
+                    <div class="track-item">
+                        <div class="track-number">2</div>
+                        <div class="track-info">
+                            <div class="track-title">Starlight Serenade</div>
+                            <div class="track-artist">Luna Shadows</div>
+                        </div>
+                        <div class="track-duration">4:12</div>
+                        <div class="track-actions">
+                            <button class="track-action-btn"><i class="fa fa-heart-o"></i></button>
+                            <button class="track-action-btn"><i class="fa fa-ellipsis-h"></i></button>
+                        </div>
+                    </div>
+                    <div class="track-item">
+                        <div class="track-number">3</div>
+                        <div class="track-info">
+                            <div class="track-title">Dream Chaser</div>
+                            <div class="track-artist">Luna Shadows</div>
+                        </div>
+                        <div class="track-duration">3:58</div>
+                        <div class="track-actions">
+                            <button class="track-action-btn"><i class="fa fa-heart-o"></i></button>
+                            <button class="track-action-btn"><i class="fa fa-ellipsis-h"></i></button>
+                        </div>
+                    </div>
+                    <div class="track-item">
+                        <div class="track-number">4</div>
+                        <div class="track-info">
+                            <div class="track-title">Echoes in the Dark</div>
+                            <div class="track-artist">Luna Shadows</div>
+                        </div>
+                        <div class="track-duration">4:30</div>
+                        <div class="track-actions">
+                            <button class="track-action-btn"><i class="fa fa-heart-o"></i></button>
+                            <button class="track-action-btn"><i class="fa fa-ellipsis-h"></i></button>
+                        </div>
+                    </div>
+                    <div class="track-item">
+                        <div class="track-number">5</div>
+                        <div class="track-info">
+                            <div class="track-title">City Lights</div>
+                            <div class="track-artist">Luna Shadows</div>
+                        </div>
+                        <div class="track-duration">3:25</div>
+                        <div class="track-actions">
+                            <button class="track-action-btn"><i class="fa fa-heart-o"></i></button>
+                            <button class="track-action-btn"><i class="fa fa-ellipsis-h"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="volume-control">
-            <button id="mute-btn" class="control-btn">
-              <i class="fa fa-volume-up"></i>
-            </button>
 
-            <!-- persistent volume slider -->
-            <input
-              type="range"
-              class="volume-slider"
-              min="0"
-              max="1"
-              step="0.01"
-              value="1"
-            />
-          </div>
+            <!-- Discography Section -->
+            <div class="albums-slider">
+                <div class="slider-header">
+                    <h2>Discography</h2>
+                    <div class="view-options">
+                        <div class="view-option active" data-view="all">All</div>
+                        <div class="view-option" data-view="album">Albums</div>
+                        <div class="view-option" data-view="single">Singles</div>
+                    </div>
+                </div>
+                <div class="slider-wrapper"> 
+                    <button class="slider-arrow left-arrow">&#10094;</button>
+                    <div class="slider-track-container">
+                        <div class="slider-track" id="discography-container">
+                            <div class="album-card">
+                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Album Cover">
+                                <h3>Echo Chamber</h3>
+                                <p>2023 • Album</p>
+                            </div>
+                            <div class="album-card">
+                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Album Cover">
+                                <h3>Moonlight</h3>
+                                <p>2022 • Album</p>
+                            </div>
+                            <div class="album-card">
+                                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Album Cover">
+                                <h3>Neon Dreams</h3>
+                                <p>2021 • Single</p>
+                            </div>
+                            <div class="album-card">
+                                <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Album Cover">
+                                <h3>Electric Feel</h3>
+                                <p>2020 • Album</p>
+                            </div>
+                            <div class="album-card">
+                                <img src="https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Album Cover">
+                                <h3>First Light</h3>
+                                <p>2019 • EP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-arrow right-arrow">&#10095;</button>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <footer class="footer">
-  <div class="footer-content">
-    <div class="footer-section about">
-      <h2>About Disqualify</h2>
-      <p>
-        Disqualifyy is a hub for thinkers, creators, and visionaries sharing
-        ideas that shape the future of technology and sustainability.
-      </p>
-    </div>
-    <div class="footer-section links">
-      <h2>Quick Access</h2>
-      <ul>
-        <li><a href="/homepage.html">Home</a></li>
-        <li><a href="#">Discover</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Insights</a></li>
-        <li><a href="#">Join Us</a></li>
-      </ul>
-    </div>
-    <div class="footer-section contact">
-      <h2>Contact</h2>
-      <p>
-        Email:
-        <a href="mailto:hello@innovatesphere.com">contact@disqualify.com</a>
-      </p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    &copy; 2025 Disqualify. All rights reserved.
-  </div>
-</footer>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>About Disqualifyy</h2>
+                    <p>
+                        Disqualifyy is your ultimate music destination, offering curated playlists,
+                        personalized recommendations, and exclusive artist content.
+                    </p>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Access</h2>
+                    <ul>
+                        <li><a href="/homepage.html">Home</a></li>
+                        <li><a href="#">Discover</a></li>
+                        <li><a href="#">Playlists</a></li>
+                        <li><a href="#">Genres</a></li>
+                        <li><a href="/settings.html">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h2>Contact</h2>
+                    <p>
+                        Email:
+                        <a href="mailto:contact@disqualify.com">contact@disqualify.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Disqualifyy. All rights reserved.
+            </div>
+        </footer>
     </section>
 
-    <script src="audioPlayer.js" defer></script>
-    <script src="ArtistPage/ArtistPage.js"></script>
-  </body>
+    <script>
+        // Basic slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup discography slider
+            const discographyTrack = document.querySelector('.slider-track');
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+            
+            const scrollAmount = 180 + 24; // card width + gap
+            
+            leftArrow.addEventListener('click', () => {
+                discographyTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            
+            rightArrow.addEventListener('click', () => {
+                discographyTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+            
+            // View options functionality
+            const viewOptions = document.querySelectorAll('.view-option');
+            viewOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    viewOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    // In a real app, you would filter the content here
+                });
+            });
+            
+            // Track item click functionality
+            const trackItems = document.querySelectorAll('.track-item');
+            trackItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    trackItems.forEach(track => track.classList.remove('playing'));
+                    this.classList.add('playing');
+                    // In a real app, you would play the track here
+                });
+            });
+            
+            // Add active state to current page in navigation
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.navbar a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>

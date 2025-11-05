@@ -1,230 +1,753 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Playlist</title>
-    <link rel="stylesheet" href="/playlist.css">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700&display=swap"
-   />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists - Disqualifyy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .navbar a {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Theme colors Tropical */
+        :root {
+          --bg-color: #004d4d;
+          --second-bg-color: #006666;
+          --text-color: #b2fffd;
+          --main-color: #00ffcc;
+          --secondary-color: #ff6b6b;
+          --accent-color: #ffd166;
+          --navbar-color: rgba(0, 77, 77, 0.9);
+        }
+
+        body.lightmode {
+          --bg-color: #f0fffe;
+          --second-bg-color: #ffffff;
+          --text-color: #008080;
+          --main-color: #00ffcc;
+          --secondary-color: #ff6b6b;
+          --accent-color: #ffd166;
+          --navbar-color: rgba(240, 255, 254, 0.9);
+        }
+
+        /* Body */
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--navbar-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 70px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 3rem;
+            background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .navbar a {
+            display: inline-block;
+            padding: 10px 15px;
+            color: var(--text-color);
+            transition: 0.3s;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+
+        .navbar a.active {
+            background-color: var(--secondary-color);
+        }
+
+        .navbar a:hover {
+            background-color: var(--main-color);
+            color: white;
+        }
+
+        .header i {
+            margin-right: 12px;
+        }
+
+        /* Hamburger Menu */
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            position: absolute;
+            top: 25px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--main-color);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        section {
+            margin-top: 70px;
+            padding: 1.5rem;
+            min-height: calc(100vh - 70px);
+            flex: 1;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
+
+        /* Search Form */
+        .search-form {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 25px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .search-form input {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            font-size: 1rem;
+            color: var(--text-color);
+            background: transparent;
+        }
+
+        .search-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .search-form button {
+            background-color: var(--main-color);
+            color: var(--bg-color);
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        .search-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Icons */
+        .icons a {
+            color: var(--text-color);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .icons a:hover {
+            color: var(--main-color);
+        }
+
+        /* Cards Layout - More Compact */
+        .cards {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        /* Playlist Card Container - More Compact */
+        .playlist-card {
+            background: linear-gradient(135deg, var(--second-bg-color), var(--bg-color));
+            border-radius: 12px;
+            padding: 1.25rem;
+            color: var(--text-color);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .playlist-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .playlist-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--text-color), var(--main-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .slider-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .slider-arrow {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .slider-arrow:hover {
+            background: var(--main-color);
+            color: var(--bg-color);
+            transform: scale(1.1);
+        }
+
+        /* Playlist Slider - More Compact */
+        .playlist-slider {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .playlist-track {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 0.5rem 0.25rem 0.75rem 0.25rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--main-color) rgba(255, 255, 255, 0.1);
+        }
+
+        .playlist-track::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .playlist-track::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .playlist-track::-webkit-scrollbar-thumb {
+            background-color: var(--main-color);
+            border-radius: 3px;
+        }
+
+        /* Playlist Item - More Compact */
+        .playlist-item {
+            flex: 0 0 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .playlist-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .playlist-item img {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .playlist-item p {
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--second-bg-color);
+            color: var(--text-color);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .footer .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 0.75rem;
+        }
+
+        .footer .footer-section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--main-color);
+        }
+
+        .footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer .footer-section ul li {
+            margin: 0.4rem 0;
+        }
+
+        .footer .footer-section ul li a {
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .footer .footer-section ul li a:hover {
+            color: var(--main-color);
+        }
+
+        .footer .footer-section p a {
+            color: var(--text-color);
+            text-decoration: underline;
+        }
+
+        .footer .footer-section.links ul {
+            display: grid;
+            align-content: center;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.2rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 0.75rem;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header {
+                position: static;
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--navbar-color);
+                padding: 10px;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                z-index: 999;
+            }
+
+            #menu-toggle:checked ~ .navbar {
+                display: flex;
+            }
+
+            .navbar a {
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .search-form {
+                max-width: 100%;
+            }
+
+            .playlist-header {
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: flex-start;
+            }
+
+            .playlist-item {
+                flex: 0 0 140px;
+            }
+
+            .footer .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .playlist-item {
+                flex: 0 0 120px;
+            }
+            
+            .playlist-header h2 {
+                font-size: 1.3rem;
+            }
+            
+            .playlist-item p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <a href="/homepage.html" class="logo">Disqualify</a>
+    <header class="header">
+        <a href="/homepage.html" class="logo">Disqualifyy</a>
 
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon">
-      <span class="fa fa-bars"></span>
-    </label>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+            <span class="fa fa-bars"></span>
+        </label>
 
-    <nav class="navbar">
-      <div class="navbar-top">
-        <a href="/homepage.html"><i class="fa fa-home"></i> Home</a>
-        <a href="/search.html"><i class="fa fa-search"></i> Search</a>
-        <a href="/MzykaWeb/Library/Library.html"><i class="fa fa-folder"></i> Playlist</a>
-      </div>
-      <div class="navbar-bottom">
-        <a href="/settings.html"><i class="fa fa-cog"></i> Settings</a>
-        <a href="/MzykaWeb/Login/logout.html"><i class="fa fa-sign-out"></i> Logout</a>
-      </div>
-    </nav>
-  </header>
+        <nav class="navbar">
+            <div class="navbar-top">
+                <a href="/homepage.html"><i class="fa fa-home"></i> Home</a>
+                <a href="/search.html"><i class="fa fa-search"></i> Search</a>
+                <a href="/MzykaWeb/Library/Library.html" class="active"><i class="fa fa-folder"></i> Playlist</a>
+            </div>
+            <div class="navbar-bottom">
+                <a href="/settings.html"><i class="fa fa-cog"></i> Settings</a>
+                <a href="/MzykaWeb/Login/logout.html"><i class="fa fa-sign-out"></i> Logout</a>
+            </div>
+        </nav>
+    </header>
 
-  <section class="main-page">
-    <div class="top-bar">
-      <form class="search-form">
-        <input type="text" placeholder="Search playlists..." />
-        <button type="submit">Search</button>
-      </form>
-      <div class="icons">
-        <a href="/MzykaWeb/Accountpage/accountpage.html"><i class="fa fa-user-circle"></i></a>
-      </div>
-    </div>
-
-    <div class="cards">
-      <!--card1: trending playlists-->
-      <div class="playlist-card">
-        <div class="playlist-header">
-          <h2>Trending Playlists</h2>
-          <div class="slider-controls">
-            <button class="slider-arrow left" id="trending-prev">&#10094;</button>
-            <button class="slider-arrow right" id="trending-next">&#10095;</button>
-          </div>
+    <section class="main-page">
+        <div class="top-bar">
+            <form class="search-form">
+                <input type="text" placeholder="Search playlists..." />
+                <button type="submit">Search</button>
+            </form>
+            <div class="icons">
+                <a href="/MzykaWeb/Accountpage/accountpage.html"><i class="fa fa-user-circle"></i></a>
+            </div>
         </div>
-        <div class="playlist-slider" id="trending-slider">
-          <div class="playlist-track">
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="Top Hits"
-              />
-              <p>Top Hits 2025</p>
-            </div>
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="Pop Vibes"
-              />
-              <p>Pop Vibes</p>
-            </div>
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="Mood Booster"
-              />
-              <p>Mood Booster</p>
-            </div>
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="R&B Chill"
-              />
-              <p>R&B Chill</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!--card2: suggested for you-->
-      <div class="playlist-card">
-        <div class="playlist-header">
-          <h2>Suggested For You</h2>
-          <div class="slider-controls">
-            <button class="slider-arrow left" id="suggested-prev">&#10094;</button>
-            <button class="slider-arrow right" id="suggested-next">&#10095;</button>
-          </div>
-        </div>
-        <div class="playlist-slider" id="suggested-slider">
-          <div class="playlist-track">
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="Indie Mix"
-              />
-              <p>Indie Mix</p>
+        <div class="cards">
+            <!-- Trending Playlists -->
+            <div class="playlist-card">
+                <div class="playlist-header">
+                    <h2>Trending Playlists</h2>
+                    <div class="slider-controls">
+                        <button class="slider-arrow left" id="trending-prev">&#10094;</button>
+                        <button class="slider-arrow right" id="trending-next">&#10095;</button>
+                    </div>
+                </div>
+                <div class="playlist-slider" id="trending-slider">
+                    <div class="playlist-track">
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Top Hits"
+                            />
+                            <p>Top Hits 2025</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Pop Vibes"
+                            />
+                            <p>Pop Vibes</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Mood Booster"
+                            />
+                            <p>Mood Booster</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="R&B Chill"
+                            />
+                            <p>R&B Chill</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Rock Classics"
+                            />
+                            <p>Rock Classics</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Hip Hop Essentials"
+                            />
+                            <p>Hip Hop Essentials</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="Chill Beats"
-              />
-              <p>Chill Beats</p>
-            </div>
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="Workout Energy"
-              />
-              <p>Workout Energy</p>
-            </div>
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="Night Drive"
-              />
-              <p>Night Drive</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!--card3: your playlists-->
-      <div class="playlist-card">
-        <div class="playlist-header">
-          <h2>Your Playlists</h2>
-          <div class="slider-controls">
-            <button class="slider-arrow left" id="your-prev">&#10094;</button>
-            <button class="slider-arrow right" id="your-next">&#10095;</button>
-          </div>
-        </div>
-        <div class="playlist-slider" id="your-slider">
-          <div class="playlist-track">
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="My Mix 1"
-              />
-              <p>My Mix 1</p>
+            <!-- Suggested For You -->
+            <div class="playlist-card">
+                <div class="playlist-header">
+                    <h2>Suggested For You</h2>
+                    <div class="slider-controls">
+                        <button class="slider-arrow left" id="suggested-prev">&#10094;</button>
+                        <button class="slider-arrow right" id="suggested-next">&#10095;</button>
+                    </div>
+                </div>
+                <div class="playlist-slider" id="suggested-slider">
+                    <div class="playlist-track">
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Indie Mix"
+                            />
+                            <p>Indie Mix</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Chill Beats"
+                            />
+                            <p>Chill Beats</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Workout Energy"
+                            />
+                            <p>Workout Energy</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Night Drive"
+                            />
+                            <p>Night Drive</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Focus Flow"
+                            />
+                            <p>Focus Flow</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Jazz Lounge"
+                            />
+                            <p>Jazz Lounge</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="Chill Study"
-              />
-              <p>Chill Study</p>
+
+            <!-- Your Playlists -->
+            <div class="playlist-card">
+                <div class="playlist-header">
+                    <h2>Your Playlists</h2>
+                    <div class="slider-controls">
+                        <button class="slider-arrow left" id="your-prev">&#10094;</button>
+                        <button class="slider-arrow right" id="your-next">&#10095;</button>
+                    </div>
+                </div>
+                <div class="playlist-slider" id="your-slider">
+                    <div class="playlist-track">
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="My Mix 1"
+                            />
+                            <p>My Mix 1</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Chill Study"
+                            />
+                            <p>Chill Study</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Late Night"
+                            />
+                            <p>Late Night</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Drive Mix"
+                            />
+                            <p>Drive Mix</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Party Time"
+                            />
+                            <p>Party Time</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img
+                                src="https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="Relaxing Sounds"
+                            />
+                            <p>Relaxing Sounds</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="Late Night"
-              />
-              <p>Late Night</p>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>About Disqualifyy</h2>
+                    <p>
+                        Disqualifyy is your space to explore trending, personalized, and curated
+                        playlists for every vibe and mood.
+                    </p>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Access</h2>
+                    <ul>
+                        <li><a href="/homepage.html">Home</a></li>
+                        <li><a href="#">Discover</a></li>
+                        <li><a href="#">Playlists</a></li>
+                        <li><a href="#">Genres</a></li>
+                        <li><a href="/settings.html">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h2>Contact</h2>
+                    <p>
+                        Email:
+                        <a href="mailto:contact@disqualify.com">contact@disqualify.com</a>
+                    </p>
+                </div>
             </div>
-            <div class="playlist-item">
-              <img
-                src="#"
-                alt="Drive Mix"
-              />
-              <p>Drive Mix</p>
+            <div class="footer-bottom">
+                &copy; 2025 Disqualifyy. All rights reserved.
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        </footer>
+    </section>
 
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h2>About Mzykaa</h2>
-          <p>
-            Mzykaa is your space to explore trending, personalized, and curated
-            playlists for every vibe and mood.
-          </p>
-        </div>
-        <div class="footer-section links">
-          <h2>Quick Access</h2>
-          <ul>
-            <li><a href="/homepage.html">Home</a></li>
-            <li><a href="#">Discover</a></li>
-            <li><a href="#">Playlists</a></li>
-            <li><a href="#">Genres</a></li>
-            <li><a href="/settings.html">Settings</a></li>
-          </ul>
-        </div>
-        <div class="footer-section contact">
-          <h2>Contact</h2>
-          <p>
-            Email:
-            <a href="mailto:hello@innovatesphere.com">contact@disqualify.com</a>
-          </p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2025 Mzykaa. All rights reserved.
-      </div>
-    </footer>
-  </section>
+    <script>
+        function setupSlider(sliderId, nextId, prevId) {
+            const slider = document.querySelector(`#${sliderId} .playlist-track`);
+            const next = document.getElementById(nextId);
+            const prev = document.getElementById(prevId);
 
-  <script>
-    function setupSlider(sliderId, nextId, prevId) {
-      const slider = document.querySelector(`#${sliderId} .playlist-track`);
-      const next = document.getElementById(nextId);
-      const prev = document.getElementById(prevId);
+            // Calculate scroll amount based on item width + gap
+            const scrollAmount = 160 + 16; // item width + gap
 
-      next.addEventListener("click", () => {
-        slider.scrollBy({ left: 250, behavior: "smooth" });
-      });
+            next.addEventListener("click", () => {
+                slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            });
 
-      prev.addEventListener("click", () => {
-        slider.scrollBy({ left: -250, behavior: "smooth" });
-      });
-    }
+            prev.addEventListener("click", () => {
+                slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            });
+        }
 
-    setupSlider("trending-slider", "trending-next", "trending-prev");
-    setupSlider("suggested-slider", "suggested-next", "suggested-prev");
-    setupSlider("your-slider", "your-next", "your-prev");
-  </script>
+        setupSlider("trending-slider", "trending-next", "trending-prev");
+        setupSlider("suggested-slider", "suggested-next", "suggested-prev");
+        setupSlider("your-slider", "your-next", "your-prev");
+
+        // Add active state to current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('.navbar a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
