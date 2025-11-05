@@ -6,9 +6,20 @@
     text-decoration: none;
     border: none;
     outline: none;
-    font-family: "Poppins", sans-serif;
-  }
+    font-family: 'Inter', sans-serif;
+}
 
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+}
+
+.navbar a {
+    font-family: 'Inter', sans-serif;
+}
 /*Theme colors Tropical */
 :root {
   --bg-color: #004d4d;
