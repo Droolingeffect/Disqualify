@@ -9,6 +9,19 @@
   font-family: "Poppins", sans-serif;
 }
 
+ 
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+}
+
+.navbar a {
+    font-family: 'Inter', sans-serif;
+}
+
 :root {
   --bg-color: #002f2f;
   --second-bg-color: #004d4d;
@@ -507,6 +520,69 @@ section {
   transform: scale(1.1);
   text-shadow: 0 0 15px var(--accent-teal), 0 0 25px var(--accent-color);
 }
+
+ .footer {
+  margin-top: 2rem;
+    background-color: var(--second-bg-color);
+    color: var(--text-color);
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .footer .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 1rem;
+  }
+  
+  .footer .footer-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+  }
+  
+  .footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer .footer-section ul li {
+    margin: 0.5rem 0;
+  }
+  
+  .footer .footer-section ul li a {
+    color: var(--text-color);
+    transition: color 0.3s;
+  }
+  
+  .footer .footer-section ul li a:hover {
+    color: var(--main-color);
+  }
+  
+  .footer .footer-section p a {
+    color: var(--text-color);
+    text-decoration: underline;
+  }
+  
+  .footer .footer-section.links ul {
+    display: grid;
+    align-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2rem;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+  }
 
 /*responsive*/
 @media (max-width: 768px){
