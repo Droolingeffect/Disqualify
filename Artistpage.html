@@ -17,20 +17,19 @@
   </head>
   <body>
     <header class="header">
-      <!-- Logo -->
+      <!-- logo -->
       <a href="home.html" class="logo">Mzykaa</a>
 
-      <!-- Checkbox for the burger toggle (hidden) -->
+      <!-- checkbox for the burger toggle (hidden) -->
       <input type="checkbox" id="menu-toggle" />
 
-      <!-- Label that acts as the "hamburger" icon -->
+      <!-- label that acts as the "hamburger" icon -->
       <label for="menu-toggle" class="menu-icon">
         <span class="fa fa-bars"></span>
       </label>
 
-      <!-- Nav container -->
       <nav class="navbar">
-        <!-- Top nav links -->
+        <!-- top nav links -->
         <div class="navbar-top">
           <a href="/MzykaWeb/home.html"><i class="fa fa-home"></i> Home</a>
           <a href="/MzykaWeb/Search/search.html"
@@ -40,7 +39,8 @@
             ><i class="fa fa-folder"></i> Playlist</a
           >
         </div>
-        <!-- Bottom nav links -->
+
+        <!-- bottom nav links -->
         <div class="navbar-bottom">
           <a href="/MzykaWeb/Settings/settings.html"
             ><i class="fa fa-cog"></i> Settings</a
@@ -66,7 +66,8 @@
       </div>
 
       <div class="cards">
-        <!-- Artist Profile Section -->
+      
+        <!-- artist profile section -->
         <div class="artist-profile">
           <div class="artist-image">
             <img id="artist-img" alt="Artist Image" />
@@ -83,19 +84,19 @@
           </div>
         </div>
 
-        <!-- Latest Album Section -->
+        <!-- latest album section -->
         <div class="latest-album-card">
           <h2 class="title-albums">Latest Album</h2>
           <div class="album-container" id="latest-album-container"></div>
         </div>
 
-        <!-- Popular Songs Section -->
+        <!-- popular songs section -->
         <div class="popular-songs-card">
           <h2>Popular Songs</h2>
           <div class="songs-container" id="songs-container"></div>
         </div>
 
-        <!-- Discography Section -->
+        <!-- discography section -->
         <div class="albums-slider">
           <div class="slider-header">
             <h2>Discography</h2>
@@ -118,7 +119,6 @@
           <source src="" type="audio/mpeg" />
         </audio>
 
-        <!-- Audio Player - Needs Fixing ( volume control, porgress bar, play/pause, grid system)-->
         <div class="audio-player" id="audio-player" style="display: none">
           <div class="player-content">
             <div class="player-info">
@@ -165,7 +165,8 @@
             <button id="mute-btn" class="control-btn">
               <i class="fa fa-volume-up"></i>
             </button>
-            <!-- Persistent volume slider -->
+
+            <!-- persistent volume slider -->
             <input
               type="range"
               class="volume-slider"
@@ -177,8 +178,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Add footer later-->
     </section>
 
     <script src="audioPlayer.js" defer></script>

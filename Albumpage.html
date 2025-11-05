@@ -11,26 +11,26 @@
     </head>
     <body>
         <header class="header">
-            <!-- Logo -->
+            <!-- logo -->
             <a href="home.html" class="logo">Mzykaa</a>
           
-            <!-- Checkbox for the burger toggle (hidden) -->
+            <!-- checkbox for the burger toggle (hidden) -->
             <input type="checkbox" id="menu-toggle" />
           
-            <!-- Label that acts as the "hamburger" icon -->
-            <label for="-toggle" class="menu-icon">
+            <!-- label that acts as the "hamburger" icon -->
+            <label for="menu-toggle" class="menu-icon">
               <span class="fa fa-bars"></span>
             </label>
-          
-            <!-- Nav container -->
+
             <nav class="navbar">
-              <!-- Top nav links -->
+              <!-- top nav links -->
               <div class="navbar-top">
                 <a href="/MzykaWeb/home.html"><i class="fa fa-home"></i> Home</a>
                 <a href="/MzykaWeb/Search/search.html"><i class="fa fa-search"></i> Search</a>
                 <a href="/MzykaWeb/Library/Library.html"><i class="fa fa-folder"></i> Playlist</a>
               </div>
-              <!-- Bottom nav links -->
+
+              <!-- bottom nav links -->
               <div class="navbar-bottom">
                 <a href="/MzykaWeb/Settings/settings.html"><i class="fa fa-cog"></i> Settings</a>
                 <a href="/MzykaWeb/Login/logout.html"><i class="fa fa-sign-out"></i> Logout</a>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="cards">
-            <!-- Album Header Section -->
+            <!-- album header section -->
             <div class="album-header">
                 <div class="album-artwork">
                     <img id="album-img" alt="Album Cover">
@@ -66,13 +66,13 @@
                 </div>
             </div>    
             
-          <!-- In the track list section -->
+          <!-- in the track list section -->
             <div class="track-list-card">
                 <h2>Track List</h2>
                 <div class="tracks-container" id="tracks-container"></div>
             </div>
 
-             <!-- Discography Section -->
+             <!-- discography section -->
             <div class="albums-slider">
               <div class="slider-header">
                 <h2>Discography</h2>
@@ -91,7 +91,6 @@
               </div>
             </div>
             
-
             <audio id="audio-element" style="display:none;">
               <source src="" type="audio/mpeg">
             </audio>
@@ -130,15 +129,13 @@
                 </div>
                 <div class="volume-control">
                   <button id="mute-btn" class="control-btn"><i class="fa fa-volume-up"></i></button>
-                  <!-- Persistent volume slider -->
+
+                  <!-- persistent volume slider -->
                   <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1">
                 </div>          
               </div>
             </div>
-      
         </div>
-
-        <!-- Add a footer later-->  
         </section>
 
         <script src="/MzykaWeb/audioPlayer.js" defer></script>
