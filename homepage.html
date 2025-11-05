@@ -879,14 +879,16 @@
 
 <script src="audioPlayer.js" defer></script>
 <script src="Home/app.js"></script>
+
 <script>
-  
 function goToSearch() {
     const query = document.getElementById("mainSearch").value.trim();
+    //if search is empty, redirect to search.html
     if (!query) {
         window.location.href = "search.html";
         return;
     }
+    //redirects search to search.html with the search input
     window.location.href = `search.html?q=${encodeURIComponent(query)}`;
 }
 
