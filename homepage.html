@@ -554,7 +554,7 @@
 <script src="audioPlayer.js" defer></script>
 <script src="Home/app.js"></script>
 
-<script>
+<script>//fixed
 function goToSearch() {
     const query = document.getElementById("mainSearch").value.trim();
     //if search is empty, redirect to search.html
@@ -566,11 +566,18 @@ function goToSearch() {
     window.location.href = `search.html?q=${encodeURIComponent(query)}`;
 }
 
-  document.addEventListener("DOMContentLoaded", function () {
+// Add event listener for Enter key in search
+document.getElementById("mainSearch").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        goToSearch();
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
     const savedSettings = JSON.parse(localStorage.getItem("#"));
     if (savedSettings && savedSettings.theme === "light") {
-      document.body.classList.add("lightmode");
+        document.body.classList.add("lightmode");
     }
-  });
+});
 </script>
 
