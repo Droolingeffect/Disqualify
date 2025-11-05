@@ -10,23 +10,23 @@
 }
 
 :root{
-  --bg-color: #0e0006;
-  --second-bg-color: #100007;
-  --text-color: #ffffff;
-  --main-color: #fb4198;
-  --secondary-color: #fc97eb;
-  --accent-color: #6631f6;
-  --navbar-color: rgba(0, 0, 0, 0.3);
+    --bg-color: #004d4d;
+    --second-bg-color: #006666;
+    --text-color: #b2fffd;
+    --main-color: #00ffcc42;
+    --secondary-color: #ff6b6b;
+    --accent-color: #ffd166;
+    --navbar-color: rgba(0, 77, 77, 0.9);
 }
 
-body.lightmode{
-  --bg-color: #ffffff;
-  --second-bg-color: #100007;
-  --text-color: #ff00bf;
-  --main-color: #fb4198;
-  --secondary-color: #fc97eb;
-  --accent-color: #6631f6;
-  --navbar-color: rgba(0, 0, 0, 0.3);
+body.lightmode {
+    --bg-color: #f0fffe;
+    --second-bg-color: #ffffff;
+    --text-color: #008080;
+    --main-color: #00ffcc;
+    --secondary-color: #ff6b6b;
+    --accent-color: #ffd166;
+    --navbar-color: rgba(240, 255, 254, 0.9);
 }
 
 html{
@@ -143,6 +143,18 @@ body{
   margin-bottom: 1.5rem;
 }
 
+#theme{
+  background-color: var(--navbar-color);
+}
+
+#notifications{
+  background-color: var(--navbar-color);
+}
+
+#privacy{
+  background-color: var(--navbar-color);
+}
+
 label{
   display: block;
   margin-bottom: 8px;
@@ -182,20 +194,19 @@ button:hover {
   box-shadow: 0 6px 14px rgba(251, 65, 152, 0.4);
 }
 
-/*making it responsive*/
 @media (max-width: 768px){
     .menu-icon{
       display: block;
     }
     .navbar{
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      position: absolute;
-      top: 70px;
-      left: 0;
-      background-color: var(--navbar-color);
-      padding: 1rem;
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--navbar-color);
+        padding: 1rem;
+        text-align: center;
     }
     #menu-toggle:checked ~ .navbar{
         display: flex;
@@ -205,4 +216,24 @@ button:hover {
 @keyframes fadeIn{
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 375px) {
+    .navbar {
+        padding: 0.75rem;
+    }
+
+    .navbar-top,
+    .navbar-bottom {
+        gap: 0.35rem;
+    }
+
+    .navbar a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .navbar a i {
+        font-size: 1rem;
+    }
 }

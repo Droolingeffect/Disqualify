@@ -18,6 +18,16 @@
   --accent-color: #ffd166;
 }
 
+body.lightmode {
+    --bg-color: #f0fffe;
+    --second-bg-color: #ffffff;
+    --text-color: #008080;
+    --main-color: #00ffcc;
+    --secondary-color: #ff6b6b;
+    --accent-color: #ffd166;
+    --navbar-color: rgba(240, 255, 254, 0.9);
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
