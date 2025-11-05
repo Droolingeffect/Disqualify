@@ -433,6 +433,17 @@
           }
         }
       }
+
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get("q");
+
+      window.onload = function() {
+        if (q) {
+          document.getElementById("searchInput").value = q;
+          search("searchInput"); // calls your existing function
+        }
+      };
+
     </script>
   </body>
 </html>

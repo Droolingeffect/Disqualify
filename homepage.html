@@ -36,11 +36,11 @@
 <nav class="navbar">
 
   <div class="search-form">
-        <input type="text" placeholder="Search songs or artists..." />
-        <button type="submit">
-            <i class="fa fa-search"></i>
-        </button>
-    </div>
+    <input type="text" id="mainSearch" placeholder="Search songs or artists..." />
+    <button type="button" onclick="goToSearch()">
+        <i class="fa fa-search"></i>
+    </button>
+  </div>
   
     <a href="homepage.html"><i class="fa fa-home"></i> Home</a>
     <a href="search.html"><i class="fa fa-search"></i> Search</a>
@@ -880,6 +880,16 @@
 <script src="audioPlayer.js" defer></script>
 <script src="Home/app.js"></script>
 <script>
+  
+function goToSearch() {
+    const query = document.getElementById("mainSearch").value.trim();
+    if (!query) {
+        window.location.href = "search.html";
+        return;
+    }
+    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+}
+
   document.addEventListener("DOMContentLoaded", function () {
     const savedSettings = JSON.parse(localStorage.getItem("#"));
     if (savedSettings && savedSettings.theme === "light") {
