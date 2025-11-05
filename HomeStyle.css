@@ -379,6 +379,87 @@ section{
     color: var(--main-color);
     font-weight: bold;
   }
+/*Discover Weekly*/
+.discover-weekly {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: var(--text-color);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.discover-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.discover-image {
+  flex: 1;
+}
+
+.discover-image img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.discover-info {
+  flex: 2;
+}
+
+.discover-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.discover-info p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.discover-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.discover-stats span {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.discover-btn {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.discover-btn:hover {
+  background: var(--main-color);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .discover-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .discover-stats {
+    justify-content: center;
+  }
+}
   
   /* Trending Now Slider Container */
   .trending-slider{
