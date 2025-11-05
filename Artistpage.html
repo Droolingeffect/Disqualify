@@ -18,48 +18,38 @@
   <body>
     <header class="header">
       <!-- logo -->
-      <a href="/homepage.html" class="logo">Disqualifyy</a>
+     <a href="homepage.html" class="logo">Disqualify</a>
 
-      <!-- checkbox for the burger toggle (hidden) -->
-      <input type="checkbox" id="menu-toggle" />
+    <!-- Checkbox for the burger toggle (hidden) -->
+    <input type="checkbox" id="menu-toggle" />
 
-      <!-- label that acts as the "hamburger" icon -->
-      <label for="menu-toggle" class="menu-icon">
+    <!-- Label that acts as the "hamburger" icon -->
+    <label for="menu-toggle" class="menu-icon">
         <span class="fa fa-bars"></span>
-      </label>
+    </label>
 
-      <nav class="navbar">
-        <!-- top nav links -->
-        <div class="navbar-top">
-          <a href="/homepage.html"><i class="fa fa-home"></i> Home</a>
-          <a href="/search.html"
-            ><i class="fa fa-search"></i> Search</a
-          >
-          <a href="/MzykaWeb/Library/Library.html"
-            ><i class="fa fa-folder"></i> Playlist</a
-          >
+    <!-- Nav container -->
+    <nav class="navbar">
+        <div class="search-form">
+            <input type="text" id="mainSearch" placeholder="Search songs or artists..." />
+            <button type="button" onclick="goToSearch()">
+                <i class="fa fa-search"></i>
+            </button>
         </div>
-
-        <!-- bottom nav links -->
-        <div class="navbar-bottom">
-          <a href="/settings.html"
-            ><i class="fa fa-cog"></i> Settings</a
-          >
-          <a href="/MzykaWeb/Login/login.html"
-            ><i class="fa fa-sign-out"></i> Logout</a
-          >
-        </div>
-      </nav>
+        
+        <a href="homepage.html"><i class="fa fa-home"></i> Home</a>
+        <a href="search.html"><i class="fa fa-search"></i> Search</a>
+        <a href="#"><i class="fa fa-folder"></i> Playlist</a>
+        <a href="settings.html"><i class="fa fa-cog"></i> Settings</a>
+        <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
+    </nav>
     </header>
 
     <section class="main-page">
       <div class="top-bar">
-        <form class="search-form">
-          <input type="text" placeholder="Search songs or artists..." />
-          <button type="submit">Search</button>
-        </form>
+
         <div class="icons">
-          <a href="/MzykaWeb/Accountpage/accountpage.html"
+          <a href="/DisqualifyWeb/Accountpage/accountpage.html"
             ><i class="fa fa-user-circle"></i
           ></a>
         </div>
