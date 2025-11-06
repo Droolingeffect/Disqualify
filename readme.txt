@@ -10,7 +10,7 @@ The project includes:
 
 Roles:
     - Mohammed Azeem B00096867:
-        *
+        * Completed the HTML for Artist page, Album page, Account page, also partially helping out with the Playlist HTML
     - Yousef Albuflasa B00095564: 
         * Home page HTML and CSS, setting js.
     - Mona Ibrahim g00100721:
