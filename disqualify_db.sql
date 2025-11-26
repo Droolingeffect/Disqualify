@@ -48,7 +48,27 @@ CREATE TABLE `songs` (
 
 LOCK TABLES `songs` WRITE;
 /*!40000 ALTER TABLE `songs` DISABLE KEYS */;
-INSERT INTO `songs` VALUES (1,'thank u, next','thank u, next','Ariana Grande','Pop',2019,'images/album_cover/arianagrande_thanku_next.png'),(2,'Cruel Summer','Lover','Taylor Swift','Pop',2019,'images/album_cover/taylorswift_lover.png'),(3,'Hot','Hot','LE SSERAFIM','K-Pop',2025,'images/album_cover/lsrfm_hot.png'),(6,'DtMF','Debí Tirar Más Fotos','Bad Bunny','Latin',2025,'images/album_cover/badbunny_debi.png'),(7,'Without Me','The Eminem Show','Eminem','Hip-Hop',2002,'images/album_cover/eminem_theeminemshow.png'),(8,'Yet To Come','Proof','BTS','K-Pop',2023,'images/album_cover/BTS_Proof.jpg'),(9,'Baby Shark','Pinkfong Animal Songs','Pinkfong','Children',2017,'images/album_cover/pinkfong_babyshark.png'),(10,'Kill Bill','SOS','SZA','R&B',2022,'images/album_cover/sza_killbill.png'),(11,'I Wanna Be Yours','AM','Arctic Monkeys','Indie',2013,'images/album_cover/arcticmonkeys_am.png'),(12,'Thunderstruck','The Razors Edge','AC/DC','Rock',1990,'images/album_cover/acdc_therazorsedge.png'),(13,'Soft Promise','Soft Promise','Somniare','Sleep',2025,'images/album_cover/somniare_softpromise.png'),(14,'Twinkle Twinkle Little Star','Twinkle Twinkle Little Star','Super Simple Songs','Children',2017,'images/album_cover/supersimplesongs.png'),(15,'Winters Sleep','Winters Sleep','Escix V','Sleep',2024,'images/album_cover/escixv_wintersleep.png'),(16,'Despacito','Despacito (featuring Daddy Yankee)','Luis Fonsi & Daddy Yankee','Latin',2017,'images/album_cover/despacito.png'),(17,'Smells Like Teen Spirit','Nevermind','Nirvana','Alternative',1991,'images/album_cover/nirvana_nevermind.png'),(18,'Creep','Pablo Honey','Radioheads','Alternative',1993,'images/album_cover/radioheads_pablohoney.png'),(19,'Wonderwall','(What\'s the Story) Morning Glory?','Oasis','Indie',1995,'images/album_cover/oasis_morningglory.png'),(20,'Not Like Us','Not Like Us','Kendrick Lamar','Hip-Hop',2024,'images/album_cover/kendricklamar_notlikeus.png'),(21,'Thinkin Bout You','channel ORANGE','Frank Ocean','R&B',2012,'images/album_cover/frankocean_channelorange.png'),(22,'Bohemian Rhapsody','Bohemian Rhapsody','Queen','Rock',1975,'images/album_cover/queen_bohemianrhapsody.png');
+INSERT INTO `songs` VALUES
+(1,'thank u, next','thank u, next','Ariana Grande','Pop',2019,'img/album_cover/arianagrande_thanku_next.png'),
+(2,'Cruel Summer','Lover','Taylor Swift','Pop',2019,'img/album_cover/taylorswift_lover.png'),
+(3,'Hot','Hot','LE SSERAFIM','K-Pop',2025,'img/album_cover/lsrfm_hot.png'),
+(4,'DtMF','Debí Tirar Más Fotos','Bad Bunny','Latin',2025,'img/album_cover/badbunny_debi.png'),
+(5,'Without Me','The Eminem Show','Eminem','Hip-Hop',2002,'img/album_cover/eminem_theeminemshow.png'),
+(6,'Yet To Come','Proof','BTS','K-Pop',2023,'img/album_cover/BTS_Proof.jpg'),
+(7,'Baby Shark','Pinkfong Animal Songs','Pinkfong','Children',2017,'img/album_cover/pinkfong_babyshark.png'),
+(8,'Kill Bill','SOS','SZA','R&B',2022,'img/album_cover/sza_killbill.png'),
+(9,'I Wanna Be Yours','AM','Arctic Monkeys','Indie',2013,'img/album_cover/arcticmonkeys_am.png'),
+(10,'Thunderstruck','The Razors Edge','AC/DC','Rock',1990,'img/album_cover/acdc_therazorsedge.png'),
+(11,'Soft Promise','Soft Promise','Somniare','Sleep',2025,'img/album_cover/somniare_softpromise.png'),
+(12,'Twinkle Twinkle Little Star','Twinkle Twinkle Little Star','Super Simple Songs','Children',2017,'img/album_cover/supersimplesongs.png'),
+(13,'Winters Sleep','Winters Sleep','Escix V','Sleep',2024,'img/album_cover/escixv_wintersleep.png'),
+(14,'Despacito','Despacito (featuring Daddy Yankee)','Luis Fonsi & Daddy Yankee','Latin',2017,'img/album_cover/despacito.png'),
+(15,'Smells Like Teen Spirit','Nevermind','Nirvana','Alternative',1991,'img/album_cover/nirvana_nevermind.png'),
+(16,'Creep','Pablo Honey','Radioheads','Alternative',1993,'img/album_cover/radioheads_pablohoney.png'),
+(17,'Wonderwall','(Whats the Story) Morning Glory?','Oasis','Indie',1995,'img/album_cover/oasis_morningglory.png'),
+(18,'Not Like Us','Not Like Us','Kendrick Lamar','Hip-Hop',2024,'img/album_cover/kendricklamar_notlikeus.png'),
+(19,'Thinkin Bout You','channel ORANGE','Frank Ocean','R&B',2012,'img/album_cover/frankocean_channelorange.png'),
+(20,'Bohemian Rhapsody','Bohemian Rhapsody','Queen','Rock',1975,'img/album_cover/queen_bohemianrhapsody.png');
 /*!40000 ALTER TABLE `songs` ENABLE KEYS */;
 UNLOCK TABLES;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
