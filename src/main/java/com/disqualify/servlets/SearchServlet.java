@@ -1,5 +1,7 @@
 package com.disqualify.servlets;
 
+import com.disqualify.model.Song;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
