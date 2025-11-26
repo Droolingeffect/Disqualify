@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.disqualify.Song" %> <!-- name of the package. song is a model -->
+<%@ page import="com.disqualify.model.Song" %> <!-- name of the package. song is a model -->
 <%
     List<Song> songs = (List<Song>) request.getAttribute("songs");
     String query = (String) request.getAttribute("query");
