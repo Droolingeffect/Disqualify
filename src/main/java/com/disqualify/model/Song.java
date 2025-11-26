@@ -1,4 +1,4 @@
-package com.disqualify;
+package com.disqualify.model;
 
 public class Song {
 
