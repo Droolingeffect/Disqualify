@@ -505,7 +505,7 @@
                 <button type="submit">Search</button>
             </form>
             <div class="icons">
-                <a href="accountpage.html"><i class="fa fa-user-circle"></i></a>
+                <a href="/accountpage.html"><i class="fa fa-user-circle"></i></a>
             </div>
         </div>
 
@@ -716,38 +716,63 @@
 </footer>
 
     <script>
-        function setupSlider(sliderId, nextId, prevId) {
-            const slider = document.querySelector(`#${sliderId} .playlist-track`);
-            const next = document.getElementById(nextId);
-            const prev = document.getElementById(prevId);
 
-            // Calculate scroll amount based on item width + gap
-            const scrollAmount = 160 + 16; // item width + gap
+ function setupSlider(sliderId, nextId, prevId) {
+     const slider = document.querySelector(`#${sliderId} .playlist-track`);
+     const next = document.getElementById(nextId);
+     const prev = document.getElementById(prevId);
 
-            next.addEventListener("click", () => {
-                slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-            });
+     const scrollAmount = 160 + 16; //width + gap
 
-            prev.addEventListener("click", () => {
-                slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-            });
-        }
+     next.addEventListener("click", () => {
+         slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+     });
 
-        setupSlider("trending-slider", "trending-next", "trending-prev");
-        setupSlider("suggested-slider", "suggested-next", "suggested-prev");
-        setupSlider("your-slider", "your-next", "your-prev");
+     prev.addEventListener("click", () => {
+         slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+     });
+ }
 
-        // Add active state to current page in navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPage = window.location.pathname;
-            const navLinks = document.querySelectorAll('.navbar a');
-            
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
-                }
-            });
-        });
+ setupSlider("trending-slider", "trending-next", "trending-prev");
+ setupSlider("suggested-slider", "suggested-next", "suggested-prev");
+ setupSlider("your-slider", "your-next", "your-prev");
+
+ //fetch playlists from backend servlet
+ fetch('/Disqualify/api/playlists')
+     .then(r => r.json())
+     .then(data => {
+         populateSlider("trending-slider", data.trending);
+         populateSlider("suggested-slider", data.suggested);
+         populateSlider("your-slider", data.yourPlaylists);
+     })
+     .catch(err => console.error("Playlist API error:", err));
+
+ //fill a playlist slider with dynamic backend results
+ function populateSlider(sliderId, playlists) {
+     const container = document.querySelector(`#${sliderId} .playlist-track`);
+     container.innerHTML = "";  //clears existing cards
+
+     playlists.forEach(p => {
+         const card = `
+             <div class="playlist-item">
+                 <img src="${p.cover}" alt="${p.name}">
+                 <p>${p.name}</p>
+             </div>
+         `;
+         container.insertAdjacentHTML("beforeend", card);
+     });
+ }
+
+ document.addEventListener('DOMContentLoaded', function() {
+     const currentPage = window.location.pathname;
+     const navLinks = document.querySelectorAll('.navbar a');
+     
+     navLinks.forEach(link => {
+         if (link.getAttribute('href') === currentPage) {
+             link.classList.add('active');
+         }
+     });
+ });
     </script>
 </body>
 </html>

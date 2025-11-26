@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Disqualifyy</title>
+    <title>Login - Disqualifyy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -152,23 +152,23 @@
             justify-content: center;
         }
 
-        /* Signup Container */
-        .signup-container {
+        /* Login Container */
+        .login-container {
             background: linear-gradient(135deg, var(--second-bg-color), var(--bg-color));
             border-radius: 16px;
             padding: 3rem;
             width: 100%;
-            max-width: 500px;
+            max-width: 450px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .signup-header {
+        .login-header {
             text-align: center;
             margin-bottom: 2rem;
         }
 
-        .signup-header h1 {
+        .login-header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             background: linear-gradient(45deg, var(--text-color), var(--main-color));
@@ -176,7 +176,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .signup-header p {
+        .login-header p {
             font-size: 1.1rem;
             opacity: 0.8;
         }
@@ -212,42 +212,30 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        .form-row {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .form-row .form-group {
-            flex: 1;
-        }
-
         .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 1.5rem;
         }
 
-        .terms-checkbox {
+        .remember-me {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 0.5rem;
         }
 
-        .terms-checkbox input {
-            margin-top: 0.25rem;
+        .remember-me input {
             width: 16px;
             height: 16px;
         }
 
-        .terms-checkbox label {
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .terms-checkbox a {
+        .forgot-password {
             color: var(--main-color);
             transition: color 0.3s;
         }
 
-        .terms-checkbox a:hover {
+        .forgot-password:hover {
             color: var(--accent-color);
             text-decoration: underline;
         }
@@ -309,49 +297,20 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .login-link {
+        .signup-link {
             text-align: center;
             margin-top: 1.5rem;
         }
 
-        .login-link a {
+        .signup-link a {
             color: var(--main-color);
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        .login-link a:hover {
+        .signup-link a:hover {
             color: var(--accent-color);
             text-decoration: underline;
-        }
-
-        .password-strength {
-            margin-top: 0.5rem;
-            height: 4px;
-            border-radius: 2px;
-            background: rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-        }
-
-        .password-strength-bar {
-            height: 100%;
-            width: 0%;
-            transition: width 0.3s, background-color 0.3s;
-        }
-
-        .password-strength.weak .password-strength-bar {
-            background-color: var(--secondary-color);
-            width: 33%;
-        }
-
-        .password-strength.medium .password-strength-bar {
-            background-color: var(--accent-color);
-            width: 66%;
-        }
-
-        .password-strength.strong .password-strength-bar {
-            background-color: var(--main-color);
-            width: 100%;
         }
 
         /* Footer */
@@ -454,14 +413,9 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             }
 
-            .signup-container {
+            .login-container {
                 padding: 2rem;
                 margin: 1rem;
-            }
-
-            .form-row {
-                flex-direction: column;
-                gap: 0;
             }
 
             .footer .footer-content {
@@ -471,19 +425,25 @@
         }
 
         @media (max-width: 480px) {
-            .signup-container {
+            .login-container {
                 padding: 1.5rem;
             }
 
-            .signup-header h1 {
+            .login-header h1 {
                 font-size: 2rem;
+            }
+
+            .form-options {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <a href="/homepage.html" class="logo">Disqualifyy</a>
+        <a href="homepage.html" class="logo">Disqualifyy</a>
 
         <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" class="menu-icon">
@@ -491,77 +451,43 @@
         </label>
 
         <nav class="navbar">
-            <a href="/homepage.html"><i class="fa fa-home"></i> Home</a>
-            <a href="/search.html"><i class="fa fa-search"></i> Search</a>
-            <a href="/playlist.html"><i class="fa fa-folder"></i> Playlist</a>
-            <a href="/settings.html"><i class="fa fa-cog"></i> Settings</a>
-            <a href="/login.html"><i class="fa fa-sign-in"></i> Login</a>
-            <a href="/signup.html" class="active"><i class="fa fa-user-plus"></i> Sign Up</a>
+            <a href="homepage.html"><i class="fa fa-home"></i> Home</a>
+            <a href="search.html"><i class="fa fa-search"></i> Search</a>
+            <a href="playlist.html"><i class="fa fa-folder"></i> Playlist</a>
+            <a href="settings.html"><i class="fa fa-cog"></i> Settings</a>
+            <a href="login.html" class="active"><i class="fa fa-sign-in"></i> Login</a>
+            <a href="signup.html"><i class="fa fa-user-plus"></i> Sign Up</a>
         </nav>
     </header>
 
     <section class="main-page">
-        <div class="signup-container">
-            <div class="signup-header">
-                <h1>Join Disqualifyy</h1>
-                <p>Create your account and start your musical journey</p>
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Welcome Back</h1>
+                <p>Sign in to your Disqualifyy account</p>
             </div>
 
-            <form id="signup-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" id="firstName" class="form-input" placeholder="Enter your first name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" id="lastName" class="form-input" placeholder="Enter your last name" required>
-                    </div>
-                </div>
-
+            <form id="login-form">
                 <div class="form-group">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" id="username" class="form-input" placeholder="Choose a username" required>
-                </div>
-
-                <div class="form-group">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" id="password" class="form-input" placeholder="Create a strong password" required>
-                    <div class="password-strength" id="password-strength">
-                        <div class="password-strength-bar"></div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="confirmPassword" class="form-label">Confirm Password</label>
-                    <input type="password" id="confirmPassword" class="form-input" placeholder="Confirm your password" required>
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
                 </div>
 
                 <div class="form-options">
-                    <div class="terms-checkbox">
-                        <input type="checkbox" id="terms" required>
-                        <label for="terms">
-                            I agree to the <a href="/terms.html">Terms of Service</a> and <a href="/privacy.html">Privacy Policy</a>
-                        </label>
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
                     </div>
-                </div>
-
-                <div class="form-options">
-                    <div class="terms-checkbox">
-                        <input type="checkbox" id="newsletter">
-                        <label for="newsletter">
-                            Send me music recommendations and updates
-                        </label>
-                    </div>
+                    <a href="/forgotpassword.html" class="forgot-password">Forgot Password?</a>
                 </div>
 
                 <button type="submit" class="btn btn-primary">
-                    <i class="fa fa-user-plus"></i> Create Account
+                    <i class="fa fa-sign-in"></i> Sign In
                 </button>
 
                 <div class="divider">
@@ -569,11 +495,11 @@
                 </div>
 
                 <button type="button" class="btn btn-secondary">
-                    <i class="fa fa-google"></i> Sign up with Google
+                    <i class="fa fa-google"></i> Continue with Google
                 </button>
 
-                <div class="login-link">
-                    <p>Already have an account? <a href="login.html">Sign in here</a></p>
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
                 </div>
             </form>
         </div>
@@ -592,9 +518,9 @@
                 <h2>Quick Access</h2>
                 <ul>
                     <li><a href="/homepage.html">Home</a></li>
-                    <li><a href="/homepage.html">Discover</a></li>
-                    <li><a href="/playlist.html">Playlists</a></li>
-                    <li><a href="/playlist.html">Genres</a></li>
+                    <li><a href="#">Discover</a></li>
+                    <li><a href="#">Playlists</a></li>
+                    <li><a href="#">Genres</a></li>
                     <li><a href="/settings.html">Settings</a></li>
                 </ul>
             </div>
@@ -613,93 +539,33 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const signupForm = document.getElementById('signup-form');
-            const passwordInput = document.getElementById('password');
-            const passwordStrength = document.getElementById('password-strength');
-            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const loginForm = document.getElementById('login-form');
             
-            // Password strength indicator
-            passwordInput.addEventListener('input', function() {
-                const password = passwordInput.value;
-                let strength = 0;
-                
-                if (password.length >= 8) strength++;
-                if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
-                if (password.match(/\d/)) strength++;
-                if (password.match(/[^a-zA-Z\d]/)) strength++;
-                
-                // Remove all classes
-                passwordStrength.classList.remove('weak', 'medium', 'strong');
-                
-                // Add appropriate class
-                if (password.length === 0) {
-                    // Do nothing - no class
-                } else if (strength <= 2) {
-                    passwordStrength.classList.add('weak');
-                } else if (strength === 3) {
-                    passwordStrength.classList.add('medium');
-                } else {
-                    passwordStrength.classList.add('strong');
-                }
-            });
-            
-            // Password confirmation validation
-            confirmPasswordInput.addEventListener('input', function() {
-                if (passwordInput.value !== confirmPasswordInput.value) {
-                    confirmPasswordInput.style.borderColor = 'var(--secondary-color)';
-                } else {
-                    confirmPasswordInput.style.borderColor = 'var(--main-color)';
-                }
-            });
-            
-            signupForm.addEventListener('submit', function(e) {
+            loginForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                const firstName = document.getElementById('firstName').value;
-                const lastName = document.getElementById('lastName').value;
                 const email = document.getElementById('email').value;
-                const username = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
-                const confirmPassword = document.getElementById('confirmPassword').value;
-                const terms = document.getElementById('terms').checked;
-                const newsletter = document.getElementById('newsletter').checked;
+                const remember = document.getElementById('remember').checked;
                 
                 // Basic validation
-                if (!firstName || !lastName || !email || !username || !password || !confirmPassword) {
-                    alert('Please fill in all required fields');
-                    return;
-                }
-                
-                if (!terms) {
-                    alert('You must agree to the Terms of Service and Privacy Policy');
-                    return;
-                }
-                
-                if (password !== confirmPassword) {
-                    alert('Passwords do not match');
-                    return;
-                }
-                
-                if (password.length < 8) {
-                    alert('Password must be at least 8 characters long');
+                if (!email || !password) {
+                    alert('Please fill in all fields');
                     return;
                 }
                 
                 // In a real app, you would send this to your backend
-                console.log('Signup attempt:', { 
-                    firstName, 
-                    lastName, 
-                    email, 
-                    username, 
-                    password, 
-                    newsletter 
-                });
+                console.log('Login attempt:', { email, password, remember });
                 
-                // Simulate signup process
-                alert('Account created successfully! Redirecting to login...');
+                // Simulate login process
+                alert('Login successful! Redirecting...');
                 
-                // Redirect to login page
-                window.location.href = '/MzykaWeb/Login/login.html';
+                // Store login status
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('userEmail', email);
+                
+                // Redirect to homepage or account page
+                window.location.href = '/homepage.html';
             });
             
             // Add active state to current page in navigation
