@@ -54,7 +54,7 @@ class MusicPlayer {
                 title: "Electric Dreams",
                 artist: "Luna Wave",
                 duration: 202,
-                file_path: "audio/songs/luna_wave_electric_dreams.mp3",
+                file_path: "audio/songs/ariana_grande_thank_u,_next.mp3",
                 cover_image: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89",
                 formattedDuration: "3:22"
             },
@@ -63,7 +63,7 @@ class MusicPlayer {
                 title: "Midnight Drive",
                 artist: "Neon Pulse", 
                 duration: 255,
-                file_path: "audio/songs/neon_pulse_midnight_drive.mp3",
+                file_path: "audio/songs/ariana_grande_thank_u,_next.mp3",
                 cover_image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81",
                 formattedDuration: "4:15"
             }
