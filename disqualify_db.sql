@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.44, for macos15 (arm64)
 --
--- Host: localhost    Database: disqualify_db
+-- Host: localhost    Database: disqualify
 -- ------------------------------------------------------
 -- Server version	9.5.0
 
