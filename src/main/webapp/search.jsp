@@ -49,11 +49,11 @@
 	</div>
 
 
-        <a href="/src/main/webapp/homepage.html"><i class="fa fa-home"></i> Home</a>
-        <a href="/src/main/webapp/search.jsp"><i class="fa fa-search"></i> Search</a>
-        <a href="/src/main/webapp/playlist.html"><i class="fa fa-folder"></i> Playlist</a>
-        <a href="/src/main/webapp/settings.html"><i class="fa fa-cog"></i> Settings</a>
-        <a href="/src/main/webapp/login.html" class="fa fa-sign-out"></i> Logout</a>
+        <a href="homepage.html"><i class="fa fa-home"></i> Home</a>
+        <a href="search"><i class="fa fa-search"></i> Search</a>
+        <a href="playlist.html"><i class="fa fa-folder"></i> Playlist</a>
+        <a href="settings.html"><i class="fa fa-cog"></i> Settings</a>
+        <a href="login.html" class="fa fa-sign-out"></i> Logout</a>
       </nav>
     </header>
 
@@ -198,11 +198,11 @@
         <div class="footer-section links">
           <h2>Quick Access</h2>
           <ul>
-            <li><a href="/src/main/webapp/homepage.html">Home</a></li>
-            <li><a href="/src/main/webapp/homepage.html">Discover</a></li>
-            <li><a href="/src/main/webapp/homepage.html">Projects</a></li>
-            <li><a href="/src/main/webapp/homepage.html">Insights</a></li>
-            <li><a href="/src/main/webapp/homepage.html">Join Us</a></li>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="homepage.html">Discover</a></li>
+            <li><a href="homepage.html">Projects</a></li>
+            <li><a href="homepage.html">Insights</a></li>
+            <li><a href="homepage.html">Join Us</a></li>
           </ul>
         </div>
         <div class="footer-section contact">
