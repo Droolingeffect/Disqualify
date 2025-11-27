@@ -1,18 +1,18 @@
 package com.disqualify.servlets;
 
 import com.disqualify.model.Song;
-import com.disqualify.util.DatabaseUtil; 
+import com.disqualify.util.DatabaseUtil;
 import com.google.gson.Gson;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/api/songs")
+@WebServlet("/api/songs")  // Different endpoint
 public class SongServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -43,7 +43,6 @@ public class SongServlet extends HttpServlet {
             
         } catch (SQLException e) {
             e.printStackTrace();
-            // Return empty list on error
         }
         
         response.setContentType("application/json");
